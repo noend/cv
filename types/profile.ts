@@ -1,17 +1,3 @@
-export interface ProfileData {
-  name: string;
-  title: string;
-  location: string;
-  email: string;
-  about: string;
-  socialLinks: {
-    linkedin?: string;
-    github?: string;
-    twitter?: string;
-    other?: string;
-  };
-}
-
 export enum LanguageProficiency {
   Native = "Native",
   Fluent = "Fluent",
@@ -25,6 +11,7 @@ export enum LanguageProficiency {
  * Interface for user profile based on current CV layout
  */
 export interface UserProfile {
+  phone: string;
   linkedin: string;
   email: string;
   name: string;

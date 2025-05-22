@@ -3,7 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { MobileMenu } from "@/components/mobile-menu";
-import { FiMail, FiLinkedin, FiMenu, FiX, FiPrinter } from "react-icons/fi";
+import {
+  FiMail,
+  FiLinkedin,
+  FiMenu,
+  FiX,
+  FiPrinter,
+  FiPhone
+} from "react-icons/fi";
 import { ExperienceEntry as ExperienceEntryComponent } from "@/components/experience-entry";
 import { SectionHeading } from "@/components/section-heading";
 import { SkillTag } from "@/components/skill-tag";
@@ -242,11 +249,23 @@ export default function Home() {
           <div className="space-y-2 print:flex print:space-y-0 print:space-x-6">
             <div className="flex items-center">
               <FiMail className="w-5 h-5 mr-2 print:w-4 print:h-4" />
-              <span>Email: {userProfile.email || "preslav.panayotov@gmail.com"}</span>
+              <span>
+                Email: {userProfile.email || "preslav.panayotov@gmail.com"}
+              </span>
+            </div>
+            <div className="flex items-center">
+              <FiPhone className="w-5 h-5 mr-2 print:w-4 print:h-4" />
+              <span>
+                Phone: {userProfile.phone || "+359 883 41 44 99"}
+              </span>
             </div>
             <div className="flex items-center">
               <FiLinkedin className="w-5 h-5 mr-2 print:w-4 print:h-4" />
-              <span>LinkedIn: {userProfile.linkedin || "www.linkedin.com/in/preslav-panayotov"}</span>
+              <span>
+                LinkedIn:{" "}
+                {userProfile.linkedin ||
+                  "www.linkedin.com/in/preslav-panayotov"}
+              </span>
             </div>
           </div>
         </section>
