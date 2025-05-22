@@ -1,0 +1,227 @@
+import { ExperienceEntry } from "@/types";
+
+export const experiences: ExperienceEntry[] = [
+  {
+    title: "Delivery Manager",
+    company: "MentorMate",
+    dateRange: "November 2020 - Present",
+    location: "Sofia, Sofia City, Bulgaria",
+    description:
+      "In my role as a Delivery Manager, I focus not only on the technical side of things but also on building strong relationships and helping every project succeed. I usually work on large-scale projects and am trusted by clients to organize, lead, and empower teams to deliver high-quality software. While I don't have direct reports, I often take on responsibilities related to people management and team development. My top priority is delivering successful outcomes and making sure our clients are happy, which is why I rely on both my technical expertise and strong interpersonal skills.",
+    tags: [
+      "Solution Architecture",
+      "Software Quality",
+      "Scrum",
+      "Team Collaboration",
+      "Microservices",
+      "Team Management",
+      "Coaching & Mentoring",
+      "Web Architecture",
+      "Software as a Service (SaaS)",
+      "Product Strategy",
+      "Software Project Management",
+      "Databases",
+      "Programming",
+      "Project Management",
+      "Engineering Management",
+      "Project Plans",
+      "Code Review",
+      "Project Delivery",
+      "Defect Management",
+      "Technical Design",
+      "Communication",
+      "Problem Solving",
+      "Hands-on Technical Leadership",
+      "Interpersonal Communication",
+      "Coaching",
+      "Client Requirements",
+      "Leadership",
+      "Program Management",
+      "Service-Oriented Architecture (SOA)",
+      "Capacity Planning",
+      "Knowledge Sharing",
+      "Team Leadership",
+      "Delivery Management",
+      "Postman API",
+      "Coding Standards",
+      "Deployment Management"
+    ]
+  },
+  {
+    title: "Senior Software Developer",
+    company: "MentorMate",
+    dateRange: "February 2018 - November 2020",
+    location: "Sofia",
+    description:
+      "As a Senior Software Developer, I became a go-to person for all things architecture and development. I worked across various technologies, often jumping into different projects to lend my expertise. I played a key role in defining application architecture and code review processes to ensure product quality. I also helped guide both teams and clients toward the right technical solutions, which meant leaning heavily on both my technical skills and soft skills.",
+    tags: [
+      "Solution Architecture",
+      "Software Quality",
+      "Team Collaboration",
+      "Microservices",
+      "Team Management",
+      "Coaching & Mentoring",
+      "Grunt (Software)",
+      "Web Architecture",
+      "Software as a Service (SaaS)",
+      "React.js",
+      "Product Strategy",
+      "Databases",
+      "Programming",
+      "Project Plans",
+      "Code Review",
+      "JavaScript",
+      "Project Delivery",
+      "Technical Design",
+      "Communication",
+      "PHP",
+      "Problem Solving",
+      "Java",
+      "PgSQL",
+      "Hands-on Technical Leadership",
+      "Cascading Style Sheets (CSS)",
+      "Coaching",
+      "Amazon Web Services (AWS)",
+      "Client Requirements",
+      "Leadership",
+      "Program Management",
+      "Service-Oriented Architecture (SOA)",
+      "Capacity Planning",
+      "Knowledge Sharing",
+      "Postman API",
+      "ESLint",
+      "Coding Standards"
+    ]
+  },
+  {
+    title: "Software Developer",
+    company: "MentorMate",
+    dateRange: "June 2016 - February 2018",
+    description:
+      "During this time, I worked mostly independently on moderately complex tasks. I focused on building complete software—not just writing code. I followed best practices, improved quality, and made sure I understood the full development lifecycle. It was a big step in applying what I knew to real problems and choosing the right approach for each situation.",
+    tags: [
+      "Solution Architecture",
+      "CSS",
+      "Software Quality",
+      "Scrum",
+      "Team Collaboration",
+      "Microservices",
+      "Grunt (Software)",
+      "Web Architecture",
+      "Software as a Service (SaaS)",
+      "Databases",
+      "Programming",
+      "Project Plans",
+      "Code Review",
+      "Technical Design",
+      "Communication",
+      "PHP",
+      "Problem Solving",
+      "Agile Methodologies",
+      "PgSQL",
+      "Hands-on Technical Leadership",
+      "Cascading Style Sheets (CSS)",
+      "Client Requirements",
+      "Service-Oriented Architecture (SOA)",
+      "Postman API",
+      "ESLint",
+      "Coding Standards"
+    ]
+  },
+  {
+    title: "Web Developer",
+    company: "IT-Cover",
+    dateRange: "December 2015 - June 2016",
+    description:
+      "At IT-Cover, I worked on a variety of web development projects. We focused on building solid CRM systems, back-office tools, and B2C websites. It was a fast-paced environment where I had the chance to work across the full stack and contribute to meaningful projects.",
+    tags: [
+      "Software Quality",
+      "Team Collaboration",
+      "Grunt (Software)",
+      "Web Architecture",
+      "Databases",
+      "Programming",
+      "Project Plans",
+      "Code Review",
+      "Technical Design",
+      "Communication",
+      "Problem Solving",
+      "Postman API",
+      "ESLint"
+    ]
+  },
+  {
+    title: "Web Developer",
+    company: "Career Town",
+    dateRange: "June 2015 - December 2015",
+    location: "Sofia",
+    description:
+      "I joined CareerTown, a startup focused on building an HR job portal with a ton of functionality. I was part of the core development team and contributed to both front-end and back-end features.",
+    tags: [
+      "Software Quality",
+      "Team Collaboration",
+      "Grunt (Software)",
+      "Web Architecture",
+      "Software as a Service (SaaS)",
+      "Databases",
+      "Programming",
+      "Project Plans",
+      "Code Review",
+      "Problem Solving",
+      "Client Requirements",
+      "Postman API"
+    ]
+  },
+  {
+    title: "Web Developer",
+    company: "BSBM",
+    dateRange: "July 2014 - June 2015",
+    location: "София",
+    description:
+      "I worked with clients of @Signature digital agency, developing new web-based applications and maintaining existing ones. I mainly used PHP, MySQL, PostgreSQL, nginx, Apache, and extJS. BSBM later became CareerTown.",
+    tags: [
+      "Software Quality",
+      "Team Collaboration",
+      "Web Architecture",
+      "Databases",
+      "Programming",
+      "Problem Solving",
+      "Client Requirements",
+      "Postman API"
+    ]
+  },
+  {
+    title: "Free Lancer",
+    company: "",
+    dateRange: "2006 - 2015",
+    description:
+      "During this time, I worked as a freelancer, taking on a variety of projects. I gained hands-on experience in full-stack development, working with different clients, solving problems, and delivering value through clean, maintainable code.",
+    tags: [
+      "Software Quality",
+      "Grunt (Software)",
+      "Databases",
+      "Programming",
+      "Communication",
+      "Problem Solving",
+      "Client Requirements",
+      "Knowledge Sharing",
+      "Postman API",
+      "ESLint",
+      "Coding Standards"
+    ]
+  },
+  {
+    title: "Web Developer",
+    company: "Interactive Share Ltd",
+    dateRange: "July 2013 - February 2014",
+    location: "Sofia",
+    description:
+      "At Interactive Share, I worked on various web development projects and supported client needs. I focused on delivering high-quality code and collaborating closely with the team.",
+    tags: [
+      "Software Quality",
+      "Team Collaboration",
+      "Programming",
+      "Client Requirements"
+    ]
+  }
+];
