@@ -76,19 +76,7 @@ export async function POST(request: NextRequest) {
     } else if (file === 'topSkills.ts') {
       fileContent = `export const topSkills = ${JSON.stringify(data, null, 2)};\n`;
     } else if (file === 'profile.ts') {
-      fileContent = `export interface ProfileData {
-  name: string;
-  title: string;
-  location: string;
-  email: string;
-  about: string;
-  socialLinks: {
-    linkedin?: string;
-    github?: string;
-    twitter?: string;
-    other?: string;
-  };
-}
+      fileContent = `import { ProfileData } from "@/types/profile";
 
 export const profileData: ProfileData = ${JSON.stringify(data, null, 2)};\n`;
     }
