@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
   outCtx.fillText(text, padding, padding);
 
   const buffer = outCanvas.toBuffer("image/png");
-  return new NextResponse(new Blob([buffer], { type: "image/png" }), {
+  return new NextResponse(buffer, {
     status: 200,
     headers: {
       "Content-Type": "image/png",
