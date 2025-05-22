@@ -6,7 +6,7 @@ export const experiences: ExperienceEntry[] = [
     "company": "MentorMate",
     "dateRange": "November 2020 - Present",
     "location": "Sofia, Sofia City, Bulgaria",
-    "description": "In my role as a Delivery Manager, I focus not only on the technical side of things but also on building strong relationships and helping every project succeed. I usually work on large-scale projects and am trusted by clients to organize, lead, and empower teams to deliver high-quality software. While I don't have direct reports, I often take on responsibilities related to people management and team development. My top priority is delivering successful outcomes and making sure our clients are happy, which is why I rely on both my technical expertise and strong interpersonal skills.",
+    "description": "In my role as a Delivery Manager, I lead the successful execution of large-scale software projects by combining technical expertise with a strong focus on client relationships and team dynamics. Trusted by clients to organize, guide, and empower cross-functional teams, I ensure the delivery of high-quality solutions that meet both business and user needs.\n\nAlthough I don't have direct reports, I regularly take on people management responsibilities—mentoring team members, fostering collaboration, and supporting professional growth. My top priority is delivering tangible results while maintaining a high level of client satisfaction, leveraging both strategic thinking and interpersonal skills to drive project success.",
     "tags": [
       "Solution Architecture",
       "Software Quality",
@@ -51,7 +51,7 @@ export const experiences: ExperienceEntry[] = [
     "company": "MentorMate",
     "dateRange": "February 2018 - November 2020",
     "location": "Sofia",
-    "description": "As a Senior Software Developer, I became a go-to person for all things architecture and development. I worked across various technologies, often jumping into different projects to lend my expertise. I played a key role in defining application architecture and code review processes to ensure product quality. I also helped guide both teams and clients toward the right technical solutions, which meant leaning heavily on both my technical skills and soft skills.",
+    "description": "As a Senior Software Developer, I served as a key technical expert, frequently relied upon for architectural decisions and hands-on development across a diverse range of projects and technologies. I played a central role in defining application architectures, establishing code review practices, and upholding high standards of software quality.\n\nIn addition to technical contributions, I worked closely with both teams and clients to guide them toward optimal technical solutions, effectively bridging the gap between business goals and engineering execution. This role required a balanced use of deep technical knowledge and strong communication and collaboration skills.",
     "tags": [
       "Solution Architecture",
       "Software Quality",
@@ -88,14 +88,18 @@ export const experiences: ExperienceEntry[] = [
       "Knowledge Sharing",
       "Postman API",
       "ESLint",
-      "Coding Standards"
+      "Coding Standards",
+      "MySQL",
+      "jQuery",
+      "React",
+      "NextJS"
     ]
   },
   {
     "title": "Software Developer",
     "company": "MentorMate",
     "dateRange": "June 2016 - February 2018",
-    "description": "During this time, I worked mostly independently on moderately complex tasks. I focused on building complete software—not just writing code. I followed best practices, improved quality, and made sure I understood the full development lifecycle. It was a big step in applying what I knew to real problems and choosing the right approach for each situation.",
+    "description": "During this time, I worked primarily independently on moderately complex tasks, taking full ownership of features from concept to deployment. My focus extended beyond simply writing code—I was committed to building complete, reliable, and maintainable software solutions. I followed industry best practices in coding, testing, and documentation, and contributed to improving development workflows by introducing small process enhancements and automation where appropriate.\n\nThis role allowed me to deepen my understanding of the full software development lifecycle—from gathering requirements and designing technical solutions to implementation, testing, deployment, and post-release support. I became more confident in evaluating trade-offs, prioritizing features, and choosing the right tools and methodologies based on the problem at hand.\n\nAdditionally, I regularly collaborated with cross-functional teams, including QA, DevOps, and product stakeholders, to ensure alignment and deliver value consistently. This experience was a key stage in my growth as an engineer, as it helped me bridge the gap between theoretical knowledge and practical execution, and laid the groundwork for taking on more strategic roles in future projects.",
     "tags": [
       "Solution Architecture",
       "CSS",
@@ -122,14 +126,18 @@ export const experiences: ExperienceEntry[] = [
       "Service-Oriented Architecture (SOA)",
       "Postman API",
       "ESLint",
-      "Coding Standards"
+      "Coding Standards",
+      "MySQL",
+      "jQuery",
+      "Angular",
+      "React"
     ]
   },
   {
     "title": "Web Developer",
     "company": "IT-Cover",
     "dateRange": "December 2015 - June 2016",
-    "description": "At IT-Cover, I worked on a variety of web development projects. We focused on building solid CRM systems, back-office tools, and B2C websites. It was a fast-paced environment where I had the chance to work across the full stack and contribute to meaningful projects.",
+    "description": "At IT-Cover, I contributed to a wide range of web development projects, including CRM systems, internal back-office tools, and customer-facing B2C websites. Operating in a fast-paced and dynamic environment, I worked across the full stack—handling everything from front-end interfaces to back-end logic and database design.\n\nThis role gave me the opportunity to engage in end-to-end development, collaborate closely with cross-functional teams, and deliver features that directly supported business operations and enhanced user experience. It was a hands-on, impactful experience that strengthened both my technical capabilities and my ability to deliver under tight deadlines.",
     "tags": [
       "Software Quality",
       "Team Collaboration",
@@ -143,7 +151,13 @@ export const experiences: ExperienceEntry[] = [
       "Communication",
       "Problem Solving",
       "Postman API",
-      "ESLint"
+      "ESLint",
+      "PHP",
+      "MySQL",
+      "Security",
+      "jQuery",
+      "ZendFramework",
+      "PgSQL"
     ]
   },
   {
@@ -151,7 +165,7 @@ export const experiences: ExperienceEntry[] = [
     "company": "Career Town",
     "dateRange": "June 2015 - December 2015",
     "location": "Sofia",
-    "description": "I joined CareerTown, a startup focused on building an HR job portal with a ton of functionality. I was part of the core development team and contributed to both front-end and back-end features.",
+    "description": "I joined CareerTown, an innovative startup developing a feature-rich HR job portal designed to streamline recruitment and job searching. As a member of the core development team, I contributed to both front-end and back-end development, helping to build scalable and user-friendly features that addressed complex business requirements.\n\nWorking in a fast-paced startup environment, I collaborated closely with product owners and designers to deliver high-impact functionality, ensuring the platform was robust, performant, and aligned with user needs. This experience enhanced my full-stack development skills and strengthened my ability to adapt quickly in an agile setting.",
     "tags": [
       "Software Quality",
       "Team Collaboration",
@@ -164,7 +178,13 @@ export const experiences: ExperienceEntry[] = [
       "Code Review",
       "Problem Solving",
       "Client Requirements",
-      "Postman API"
+      "Postman API",
+      "PHP",
+      "MySQL",
+      "Laravel",
+      "jQuery",
+      "Angular",
+      "JavaScript"
     ]
   },
   {
@@ -172,7 +192,7 @@ export const experiences: ExperienceEntry[] = [
     "company": "BSBM",
     "dateRange": "July 2014 - June 2015",
     "location": "София",
-    "description": "I worked with clients of @Signature digital agency, developing new web-based applications and maintaining existing ones. I mainly used PHP, MySQL, PostgreSQL, nginx, Apache, and extJS. BSBM later became CareerTown.",
+    "description": "I collaborated with clients of Signature Digital Agency, developing new web applications and maintaining existing ones to meet evolving business needs. My work primarily involved backend and frontend development using PHP, MySQL, PostgreSQL, nginx, Apache, and extJS.\n\nNotably, the BSBM project I contributed to later evolved into CareerTown, allowing me to continue working on the platform’s growth and functionality as part of the core development team.",
     "tags": [
       "Software Quality",
       "Team Collaboration",
@@ -181,7 +201,30 @@ export const experiences: ExperienceEntry[] = [
       "Programming",
       "Problem Solving",
       "Client Requirements",
-      "Postman API"
+      "Postman API",
+      "PHP",
+      "MySQL",
+      "PgSQL",
+      "Server Administration",
+      "Apache",
+      "nginx",
+      "extJS"
+    ]
+  },
+  {
+    "title": "Web Developer",
+    "company": "Interactive Share Ltd",
+    "dateRange": "July 2013 - February 2014",
+    "location": "Sofia",
+    "description": "At Interactive Share, I contributed to a variety of web development projects while actively supporting client requirements. I prioritized delivering high-quality, maintainable code and worked closely with cross-functional teams to ensure project goals were met efficiently.\n\nIn addition to development, I gained experience supporting digital marketing campaigns, including Facebook advertising initiatives, helping to align technical solutions with marketing objectives and client expectations.",
+    "tags": [
+      "Software Quality",
+      "Team Collaboration",
+      "Programming",
+      "Client Requirements",
+      "Marketing",
+      "PHP",
+      "MySQL"
     ]
   },
   {
@@ -201,19 +244,6 @@ export const experiences: ExperienceEntry[] = [
       "Postman API",
       "ESLint",
       "Coding Standards"
-    ]
-  },
-  {
-    "title": "Web Developer",
-    "company": "Interactive Share Ltd",
-    "dateRange": "July 2013 - February 2014",
-    "location": "Sofia",
-    "description": "At Interactive Share, I worked on various web development projects and supported client needs. I focused on delivering high-quality code and collaborating closely with the team.",
-    "tags": [
-      "Software Quality",
-      "Team Collaboration",
-      "Programming",
-      "Client Requirements"
     ]
   }
 ];

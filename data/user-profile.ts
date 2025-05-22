@@ -6,7 +6,7 @@ export const userProfile: UserProfile = {
   "phone": "+359 883 41 44 99",
   "location": "Sofia, Sofia City, Bulgaria",
   "profileImageUrl": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1516874128583.jpg-JojP3apvxPBlqKPnuVkdWOZUuhfvnW.jpeg",
-  "summary": "Software Delivery Manager with over years of experience in software engineering and team management. Expertise in Software Development, and Process Improvement ensures seamless delivery and high-performance outcomes.",
+  "summary": "Software Delivery Manager with over 10 years of experience in the IT industry, including 5 years in leading delivery and engineering teams. Proven expertise in software development, project execution, and process optimization, ensuring on-time delivery, high-quality outcomes, and continuous team performance improvement.",
   "email": "preslav.panayotov@gmail.com",
   "linkedin": "www.linkedin.com/in/preslav-panayotov",
   "languages": [
