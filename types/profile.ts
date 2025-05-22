@@ -11,3 +11,14 @@ export interface ProfileData {
     other?: string;
   };
 }
+
+/**
+ * Interface for user profile based on current CV layout
+ */
+export interface UserProfile {
+  name: string;
+  title: string;
+  location: string;
+  profileImageUrl: string;
+  summary: string;
+}

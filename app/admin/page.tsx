@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Textarea } from '@/components/ui/textarea';
@@ -49,10 +50,19 @@ export default function AdminPage() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const { toast } = useToast();
 
+  const router = useRouter();
+
   useEffect(() => {
     const checkEnv = async () => {
       try {
         setLoading(true);
+        // Check if user is authenticated
+        const isAuthenticated = document.cookie.includes('admin_authenticated=true');
+        if (!isAuthenticated) {
+          router.push('/admin/login');
+          return;
+        }
+        
         const res = await fetch('/api/admin');
         
         if (res.status === 403) {
@@ -87,7 +97,7 @@ export default function AdminPage() {
     };
     
     checkEnv();
-  }, []);
+  }, [router]);
 
   const handleSave = async (file: string, data: any) => {
     try {

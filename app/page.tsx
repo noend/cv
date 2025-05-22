@@ -10,6 +10,7 @@ import { SkillTag } from "@/components/skill-tag";
 import { ExperienceEntry } from "@/types";
 import { experiences } from "@/data/cv-data";
 import { topSkills } from "@/data/topSkills";
+import { userProfile } from "@/data/user-profile";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -105,27 +106,30 @@ export default function Home() {
         <section className="flex flex-col items-center mb-12 print:mb-6 print:items-start print:flex-row print:gap-6">
           <div className="w-32 h-32 rounded-full overflow-hidden mb-4 print:mb-0 print:w-24 print:h-24">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1516874128583.jpg-JojP3apvxPBlqKPnuVkdWOZUuhfvnW.jpeg"
-              alt="Profile picture of Preslav Panayotov"
+              src={userProfile.profileImageUrl}
+              alt={`Profile picture of ${userProfile.name}`}
               width={128}
               height={128}
               className="object-cover"
             />
           </div>
           <div className="text-center print:text-left">
-            <h1 className="text-2xl font-bold mb-1">Preslav Panayotov</h1>
-            <h2 className="text-gray-600 mb-1">Software Delivery Manager</h2>
-            <p className="text-gray-500">Sofia, Sofia City, Bulgaria</p>
+            <h1 className="text-2xl font-bold mb-1">
+              {userProfile.name}
+            </h1>
+            <h2 className="text-gray-600 mb-1">
+              {userProfile.title}
+            </h2>
+            <p className="text-gray-500">
+              {userProfile.location}
+            </p>
           </div>
         </section>
 
         <section id="summary" className="mb-10 print:mb-6">
           <SectionHeading title="Summary" />
           <p className="text-gray-700">
-            Software Delivery Manager with over years of experience in software
-            engineering and team management. Expertise in Software Development,
-            and Process Improvement ensures seamless delivery and
-            high-performance outcomes.
+            {userProfile.summary}
           </p>
 
           <div className="print:hidden text-gray-700 mb-10 flex flex-wrap justify-center gap-2">
