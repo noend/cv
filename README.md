@@ -52,8 +52,8 @@ To run the project locally:
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/ppanayotov.com.git
-cd ppanayotov.com
+git clone [https://github.com/your-username/ppanayotov-com.git](https://github.com/index-panayotov/ppanayotov-com.git)
+cd ppanayotov-com
 ```
 
 2. **Install dependencies**
@@ -75,9 +75,13 @@ ADMIN_PASSWORD=your-secure-password
 ```bash
 npm run dev
 ```
-
+Make all changes.
 Visit `http://localhost:3000` to view your site.
 
+```bash
+npm run build
+```
+To build your project and deploy it.
 ---
 
 ## 📁 Folder Structure
