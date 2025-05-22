@@ -128,13 +128,9 @@ export default function Home() {
             high-performance outcomes.
           </p>
 
-          <p className="print:hidden text-gray-700 mb-10">
-            <div className="flex flex-wrap justify-center gap-2">
-              {topSkills.map((tag, index) =>
-                <SkillTag key={index} name={tag} />
-              )}
-            </div>
-          </p>
+          <div className="print:hidden text-gray-700 mb-10 flex flex-wrap justify-center gap-2">
+            {topSkills.map((tag, index) => <SkillTag key={index} name={tag} />)}
+          </div>
         </section>
 
         <section id="experience" className="mb-10 print:mb-6">
