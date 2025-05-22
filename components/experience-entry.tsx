@@ -79,7 +79,7 @@ export function ExperienceEntry({ title, company, dateRange, location, descripti
 
           {/* Print version - always show all tags */}
           <div className="hidden print:block mt-2">
-            <div className="flex flex-wrap gap-2">
+            <div className="print:block">
               {tags.map((tag, index) => (
                 <SkillTag key={index} name={tag} />
               ))}

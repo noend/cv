@@ -151,7 +151,7 @@ export default function Home() {
 
         <section id="skills" className="mb-10 print:mb-6">
           <SectionHeading title="Skills" />
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 print:block print:space-y-0">
             {topSkills.map((skill, index) =>
               <SkillTag key={index} name={skill} />
             )}
@@ -160,10 +160,24 @@ export default function Home() {
           {/* Hidden text for ATS - comprehensive skills list */}
           <div className="hidden print:block mt-4">
             <h3 className="font-semibold mb-2">Additional Skills</h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="print:block">
+              {topSkills.slice(0, 5).map((skill, index) =>
+                <span key={index} className="print:inline">
+                  {skill}
+                  {index < Math.min(topSkills.length, 5) - 1 ? ", " : ""}
+                </span>
+              )}
+            </div>
+            <div className="print:block">
               {Array.from(new Set(experiences.flatMap(exp => exp.tags)))
                 .filter(skill => !topSkills.includes(skill))
-                .map((skill, index) => <SkillTag key={index} name={skill} />)}
+                .slice(0, 5)
+                .map((skill, index, array) =>
+                  <span key={index} className="print:inline">
+                    {skill}
+                    {index < array.length - 1 ? ", " : ""}
+                  </span>
+                )}
             </div>
           </div>
         </section>
