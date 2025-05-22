@@ -7,7 +7,6 @@ import { FiMail, FiLinkedin, FiMenu, FiX, FiPrinter } from "react-icons/fi";
 import { ExperienceEntry as ExperienceEntryComponent } from "@/components/experience-entry";
 import { SectionHeading } from "@/components/section-heading";
 import { SkillTag } from "@/components/skill-tag";
-import { ExperienceEntry } from "@/types";
 import { experiences } from "@/data/cv-data";
 import { topSkills } from "@/data/topSkills";
 import { userProfile } from "@/data/user-profile";
@@ -37,10 +36,12 @@ export default function Home() {
           aria-hidden="true"
           className="text-[0.1px] text-white overflow-hidden h-[0.1px]"
         >
-          <h1>Preslav Panayotov - Software Delivery Manager</h1>
+          <h1>
+            {userProfile.name} - {userProfile.title}
+          </h1>
           <p>
-            Contact: preslav.panayotov@gmail.com,
-            www.linkedin.com/in/preslav-panayotov
+            Contact: {userProfile.email || "preslav.panayotov@gmail.com"},
+            {userProfile.linkedin || "www.linkedin.com/in/preslav-panayotov"}
           </p>
           <p>
             Skills:{" "}
@@ -189,35 +190,50 @@ export default function Home() {
         <section id="languages" className="mb-10 print:mb-6">
           <SectionHeading title="Languages" />
           <div className="space-y-2">
-            <div>
-              <span className="font-medium">Bulgarian:</span> Native or
-              Bilingual
-            </div>
-            <div>
-              <span className="font-medium">English:</span> Professional Working
-            </div>
+            {userProfile.languages.map((language, index) =>
+              <div key={index}>
+                <span className="font-medium">{language.name}:</span>{" "}
+                {language.proficiency}
+              </div>
+            )}
           </div>
         </section>
 
         <section id="education" className="mb-10 print:mb-6">
           <SectionHeading title="Education" />
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
-            <h3 className="font-semibold">
-              Sofia University St. Kliment Ohridski
-            </h3>
-            <span className="text-gray-500 text-sm">2010 - 2013</span>
-          </div>
-          <p className="text-gray-700">
-            Bachelor's degree, Mathematics and Computer Science
-          </p>
+          {userProfile.education.map((edu, index) =>
+            <div key={index} className="mb-4 last:mb-0">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+                <h3 className="font-semibold">
+                  {edu.institution}
+                </h3>
+                <span className="text-gray-500 text-sm">
+                  {edu.dateRange}
+                </span>
+              </div>
+              <p className="text-gray-700">
+                {edu.degree}, {edu.field}
+              </p>
+            </div>
+          )}
         </section>
 
         <section id="certifications" className="mb-10 print:mb-6">
           <SectionHeading title="Certifications" />
           <ul className="list-disc list-inside space-y-1 text-gray-700">
-            <li>Security Awareness Essentials</li>
-            <li>Business English</li>
-            <li>Shaping up with Angular.js</li>
+            {userProfile.certifications.map((cert, index) =>
+              <li key={index}>
+                {cert.name}
+                {cert.issuer &&
+                  <span>
+                    {" "}- {cert.issuer}
+                  </span>}
+                {cert.date &&
+                  <span className="text-gray-500 text-sm ml-1">
+                    ({cert.date})
+                  </span>}
+              </li>
+            )}
           </ul>
         </section>
 
@@ -226,11 +242,11 @@ export default function Home() {
           <div className="space-y-2 print:flex print:space-y-0 print:space-x-6">
             <div className="flex items-center">
               <FiMail className="w-5 h-5 mr-2 print:w-4 print:h-4" />
-              <span>Email: preslav.panayotov@gmail.com</span>
+              <span>Email: {userProfile.email || "preslav.panayotov@gmail.com"}</span>
             </div>
             <div className="flex items-center">
               <FiLinkedin className="w-5 h-5 mr-2 print:w-4 print:h-4" />
-              <span>LinkedIn: www.linkedin.com/in/preslav-panayotov</span>
+              <span>LinkedIn: {userProfile.linkedin || "www.linkedin.com/in/preslav-panayotov"}</span>
             </div>
           </div>
         </section>
@@ -238,7 +254,7 @@ export default function Home() {
 
       <footer className="container mx-auto px-4 py-6 text-center text-gray-500 text-sm print:hidden">
         <p>
-          © {new Date().getFullYear()} Preslav Panayotov. All rights reserved.
+          © {new Date().getFullYear()} {userProfile.name}. All rights reserved.
         </p>
       </footer>
     </div>
