@@ -141,12 +141,32 @@ export default function ProfileDataTab({
                   />
                 </div>
                 <div className="space-y-2">
+                  <label htmlFor="phone" className="text-sm font-medium">Phone</label>
+                  <Input 
+                    id="phone" 
+                    type="tel"
+                    value={profileData.phone || ''} 
+                    onChange={(e) => handleProfileFieldChange('phone', e.target.value)}
+                  />
+                </div>
+                <div className="space-y-2">
                   <label htmlFor="profileImageUrl" className="text-sm font-medium">Profile Image URL</label>
                   <Input 
                     id="profileImageUrl" 
                     value={profileData.profileImageUrl || ''} 
                     onChange={(e) => handleProfileFieldChange('profileImageUrl', e.target.value)}
                   />
+                  {profileData.profileImageUrl && (
+                    <div className="mt-2 flex items-center gap-2">
+                      <span className="text-xs text-gray-500">Preview:</span>
+                      <img
+                        src={profileData.profileImageUrl}
+                        alt="Profile Preview"
+                        className="w-14 h-14 rounded-full object-cover border "
+                        style={{ minWidth: 40, minHeight: 40 }}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
               
