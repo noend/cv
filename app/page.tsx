@@ -250,13 +250,37 @@ export default function Home() {
             <div className="flex items-center">
               <FiMail className="w-5 h-5 mr-2 print:w-4 print:h-4" />
               <span>
-                Email: {userProfile.email || "preslav.panayotov@gmail.com"}
+                Email:{" "}
+                <img
+                  src={`/api/text-image?text=${encodeURIComponent(
+                    userProfile.email || "preslav.panayotov@gmail.com"
+                  )}&size=24&color=%23222&bg=transparent`}
+                  alt="Email address"
+                  style={{
+                    display: "inline",
+                    verticalAlign: "middle",
+                    height: 24
+                  }}
+                  draggable={false}
+                />
               </span>
             </div>
             <div className="flex items-center">
               <FiPhone className="w-5 h-5 mr-2 print:w-4 print:h-4" />
               <span>
-                Phone: {userProfile.phone || "+359 883 41 44 99"}
+                Phone:{" "}
+                <img
+                  src={`/api/text-image?text=${encodeURIComponent(
+                    userProfile.phone || "+359 883 41 44 99"
+                  )}&size=24&color=%23222&bg=transparent`}
+                  alt="Phone number"
+                  style={{
+                    display: "inline",
+                    verticalAlign: "middle",
+                    height: 24
+                  }}
+                  draggable={false}
+                />
               </span>
             </div>
             <div className="flex items-center">
