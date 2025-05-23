@@ -18,6 +18,9 @@
 - **Clean UI with Expandable Sections**  
   Designed for clarity and professionalism, with optional future sections for customization.
 
+- **AI-Assisted Development**  
+  This project was approximately 99% generated with AI assistance, showcasing modern development workflows.
+
 > ⚠️ **Security Note:**  
 > It is strongly recommended not to upload the `admin/` folder to your production server unless properly secured. You can run the admin interface locally or restrict access during deployment.
 
@@ -75,14 +78,15 @@ ADMIN_PASSWORD=your-secure-password
 ```bash
 npm run dev
 ```
+
 Make all changes.
 Visit `http://localhost:3000` to view your site.
 
 ```bash
 npm run build
 ```
-To build your project and deploy it.
----
+
+## To build your project and deploy it.
 
 ## 📁 Folder Structure
 
@@ -93,6 +97,7 @@ To build your project and deploy it.
 /hooks          → Custom React hooks
 /lib            → Utility functions and helpers
 /public         → Static assets (images, icons, etc.)
+  /fonts        → Font files for image generation or custom web fonts
 /styles         → Global and component styles
 /types          → TypeScript type definitions
 .env            → Environment variables (e.g., admin password)
