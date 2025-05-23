@@ -252,9 +252,7 @@ export default function Home() {
               <span>
                 Email:{" "}
                 <img
-                  src={`/api/text-image?text=${encodeURIComponent(
-                    userProfile.email || "preslav.panayotov@gmail.com"
-                  )}&size=24&color=%23222&bg=transparent`}
+                  src={`/api/text-image?fieldType=email&size=24&color=%23222&bg=transparent`}
                   alt="Email address"
                   style={{
                     display: "inline",
@@ -270,9 +268,7 @@ export default function Home() {
               <span>
                 Phone:{" "}
                 <img
-                  src={`/api/text-image?text=${encodeURIComponent(
-                    userProfile.phone || "+359 883 41 44 99"
-                  )}&size=24&color=%23222&bg=transparent`}
+                  src={`/api/text-image?fieldType=phone&size=24&color=%23222&bg=transparent`}
                   alt="Phone number"
                   style={{
                     display: "inline",
