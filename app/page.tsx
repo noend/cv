@@ -121,7 +121,13 @@ export default function Home() {
               alt={`Profile picture of ${userProfile.name}`}
               width={128}
               height={128}
-              className="object-cover"
+              className="object-cover print:hidden"
+            />
+            {/* PDF optimized image for print */}
+            <img
+              src={getProfileImageUrl(userProfile, 'pdf')}
+              alt={`Profile picture of ${userProfile.name}`}
+              className="w-full h-full object-cover hidden print:block"
             />
           </div>
           <div className="text-center print:text-left">

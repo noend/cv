@@ -133,11 +133,14 @@ export default function ProfileDataTab({
               <ImageUpload
                 currentImageUrl={profileData.profileImageUrl || ''}
                 currentWebUrl={profileData.profileImageWebUrl}
-                currentPdfUrl={profileData.profileImagePdfUrl}
-                onImageChange={(imageUrl, webUrl, pdfUrl) => {
-                  handleProfileFieldChange('profileImageUrl', imageUrl);
-                  if (webUrl) handleProfileFieldChange('profileImageWebUrl', webUrl);
-                  if (pdfUrl) handleProfileFieldChange('profileImagePdfUrl', pdfUrl);
+                currentPdfUrl={profileData.profileImagePdfUrl}                onImageChange={(imageUrl, webUrl, pdfUrl) => {
+                  // Update all image fields in a single state update
+                  setProfileData({
+                    ...profileData,
+                    profileImageUrl: imageUrl,
+                    profileImageWebUrl: webUrl || '',
+                    profileImagePdfUrl: pdfUrl || ''
+                  });
                 }}
               />
               

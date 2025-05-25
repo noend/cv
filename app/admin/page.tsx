@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { ExperienceEntry } from "@/types";
+import { LanguageProficiency } from "@/types/profile";
 import { useToast } from "@/hooks/use-toast";
 import {
   Dialog,
@@ -61,7 +62,7 @@ export default function AdminPage() {
   const [certificationDialogOpen, setCertificationDialogOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState<{
     name: string;
-    proficiency: string;
+    proficiency: LanguageProficiency;
     _index?: number;
   } | null>(null);
   const [currentEducation, setCurrentEducation] = useState<{

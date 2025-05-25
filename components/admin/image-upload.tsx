@@ -27,8 +27,7 @@ export default function ImageUpload({
   const [dragOver, setDragOver] = useState(false);
   const [externalUrl, setExternalUrl] = useState(currentImageUrl || '');
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { toast } = useToast();
-  const handleFileUpload = async (file: File) => {
+  const { toast } = useToast();  const handleFileUpload = async (file: File) => {
     // Validate file first
     const validation = validateImageFile(file);
     if (!validation.valid) {
@@ -56,8 +55,7 @@ export default function ImageUpload({
       if (!response.ok) {
         throw new Error(result.error || 'Upload failed');
       }
-      
-      // Use web URL as main profile image URL
+        // Update all three image fields with the new uploaded images
       onImageChange(result.webUrl, result.webUrl, result.pdfUrl);
       
       toast({
@@ -75,9 +73,7 @@ export default function ImageUpload({
     } finally {
       setUploading(false);
     }
-  };
-
-  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+  };  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       handleFileUpload(file);
@@ -116,10 +112,9 @@ export default function ImageUpload({
   const handleDragLeave = () => {
     setDragOver(false);
   };
-
   const handleExternalUrlSubmit = () => {
     if (externalUrl) {
-      onImageChange(externalUrl);
+      onImageChange(externalUrl, '', '');
       toast({
         title: "Success",
         description: "External image URL set successfully",
@@ -140,9 +135,8 @@ export default function ImageUpload({
         });
       } catch (error) {
         console.error('Failed to delete uploaded files:', error);
-      }
-    }
-      onImageChange('');
+      }    }
+    onImageChange('', '', '');
     setExternalUrl('');
     toast({
       title: "Success",

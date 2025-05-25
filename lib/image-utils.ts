@@ -4,6 +4,10 @@
 
 /**
  * Get the appropriate image URL based on context (web or PDF)
+ * Priority order for uploaded images:
+ * 1. Context-specific optimized image (profileImageWebUrl/profileImagePdfUrl)
+ * 2. Main profile image URL (profileImageUrl) as fallback
+ *
  * @param profile User profile object
  * @param context Context for which the image is needed ('web' | 'pdf')
  * @returns The best available image URL for the context
@@ -16,6 +20,7 @@ export function getProfileImageUrl(
   },
   context: "web" | "pdf" = "web"
 ): string {
+  // Priority 1: Use context-specific optimized image if available
   if (context === "web" && profile.profileImageWebUrl) {
     return profile.profileImageWebUrl;
   }
@@ -24,7 +29,7 @@ export function getProfileImageUrl(
     return profile.profileImagePdfUrl;
   }
 
-  // Fallback to main profile image URL
+  // Priority 2: Fallback to main profile image URL
   return profile.profileImageUrl || "";
 }
 

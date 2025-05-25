@@ -1,4 +1,5 @@
 import { ExperienceEntry } from "@/types";
+import { LanguageProficiency } from "@/types/profile";
 
 // Function to handle saving data to API
 export const handleSave = async (
@@ -343,13 +344,17 @@ export const generateAutomaticTopSkills = async (
 // Functions for managing languages
 export const addLanguage = (
   setCurrentLanguage: (
-    language: { name: string; proficiency: string; _index?: number } | null
+    language: {
+      name: string;
+      proficiency: LanguageProficiency;
+      _index?: number;
+    } | null
   ) => void,
   setLanguageDialogOpen: (open: boolean) => void
 ) => {
   const newLanguage = {
     name: "",
-    proficiency: "Professional"
+    proficiency: LanguageProficiency.Professional
   };
   setCurrentLanguage(newLanguage);
   setLanguageDialogOpen(true);
@@ -359,7 +364,11 @@ export const editLanguage = (
   lang: any,
   index: number,
   setCurrentLanguage: (
-    language: { name: string; proficiency: string; _index?: number } | null
+    language: {
+      name: string;
+      proficiency: LanguageProficiency;
+      _index?: number;
+    } | null
   ) => void,
   setLanguageDialogOpen: (open: boolean) => void
 ) => {
@@ -370,14 +379,18 @@ export const editLanguage = (
 export const saveLanguage = (
   currentLanguage: {
     name: string;
-    proficiency: string;
+    proficiency: LanguageProficiency;
     _index?: number;
   } | null,
   profileData: any,
   setProfileData: (profileData: any) => void,
   setLanguageDialogOpen: (open: boolean) => void,
   setCurrentLanguage: (
-    language: { name: string; proficiency: string; _index?: number } | null
+    language: {
+      name: string;
+      proficiency: LanguageProficiency;
+      _index?: number;
+    } | null
   ) => void,
   toast: any
 ) => {

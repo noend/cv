@@ -9,12 +9,13 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { LanguageProficiency } from '@/types/profile';
 
 interface LanguageDialogProps {
   open: boolean;
   setOpen: (open: boolean) => void;
-  currentLanguage: { name: string; proficiency: string; _index?: number } | null;
-  setCurrentLanguage: (lang: { name: string; proficiency: string; _index?: number } | null) => void;
+  currentLanguage: { name: string; proficiency: LanguageProficiency; _index?: number } | null;
+  setCurrentLanguage: (lang: { name: string; proficiency: LanguageProficiency; _index?: number } | null) => void;
   saveLanguage: () => void;
 }
 
@@ -46,19 +47,15 @@ const LanguageDialog: React.FC<LanguageDialogProps> = ({
             />
           </div>
           <div className="space-y-2">
-            <label htmlFor="proficiency" className="text-sm font-medium">Proficiency Level</label>
-            <select 
+            <label htmlFor="proficiency" className="text-sm font-medium">Proficiency Level</label>            <select 
               id="proficiency"
               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               value={currentLanguage.proficiency} 
-              onChange={(e) => setCurrentLanguage({ ...currentLanguage, proficiency: e.target.value })}
+              onChange={(e) => setCurrentLanguage({ ...currentLanguage, proficiency: e.target.value as LanguageProficiency })}
             >
-              <option value="Native">Native</option>
-              <option value="Fluent">Fluent</option>
-              <option value="Professional">Professional</option>
-              <option value="Intermediate">Intermediate</option>
-              <option value="Elementary">Elementary</option>
-              <option value="Beginner">Beginner</option>
+              {Object.values(LanguageProficiency).map((level) => (
+                <option key={level} value={level}>{level}</option>
+              ))}
             </select>
           </div>
         </div>
