@@ -285,8 +285,15 @@ export default function Home() {
               <FiLinkedin className="w-5 h-5 mr-2 print:w-4 print:h-4" />
               <span>
                 LinkedIn:{" "}
-                {userProfile.linkedin ||
-                  "www.linkedin.com/in/preslav-panayotov"}
+                <a 
+                  href={`https://${userProfile.linkedin?.replace(/^https?:\/\//i, '') || 'www.linkedin.com/in/preslav-panayotov'}`}
+                  target="_blank" 
+                  title={`LinkedIn Profile of ${userProfile.name}`}
+                  rel="follow noopener noreferrer external"
+                  className="hover:underline"
+                >
+                  {userProfile.linkedin?.replace(/^https?:\/\//i, '') || 'www.linkedin.com/in/preslav-panayotov'}
+                </a>
               </span>
             </div>
           </div>
