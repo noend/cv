@@ -10,6 +10,18 @@ export const handleSave = async (
 ) => {
   try {
     setSaving(true);
+    // Convert language proficiency string values to enum if needed
+    if (data.languages && Array.isArray(data.languages)) {
+      data.languages = data.languages.map((lang: any) => ({
+        ...lang,
+        proficiency:
+          typeof lang.proficiency === "string"
+            ? LanguageProficiency[
+                lang.proficiency as keyof typeof LanguageProficiency
+              ] || lang.proficiency
+            : lang.proficiency
+      }));
+    }
     const res = await fetch("/api/admin", {
       method: "POST",
       headers: {
