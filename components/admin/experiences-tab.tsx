@@ -13,20 +13,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Plus, ArrowUp, ArrowDown, Edit, Trash2 } from "lucide-react";
-
-interface ExperiencesTabProps {
-  experiences: ExperienceEntry[];
-  setExperiences: (experiences: ExperienceEntry[]) => void;
-  editMode: "visual" | "json";
-  setEditMode: (mode: "visual" | "json") => void;
-  saving: boolean;
-  handleSave: (file: string, data: any) => void;
-  handleExperiencesChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  addExperience: () => void;
-  editExperience: (exp: ExperienceEntry, index: number) => void;
-  deleteExperience: (index: number) => void;
-  moveExperience: (index: number, direction: "up" | "down") => void;
-}
+import { ExperiencesTabProps } from "@/types/admin-components";
 
 export default function ExperiencesTab({
   experiences,

@@ -59,52 +59,54 @@ export default function Home() {
         </div>
       </div>
 
-      <header className="container mx-auto px-4 py-6 print:hidden">
-        <nav className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            {/* <span className="text-lg font-semibold">Personal Online CV</span> */}
-          </div>
-          <div className="hidden md:flex items-center space-x-6 absolute left-1/2 transform -translate-x-1/2">
-            <Link href="#summary" className="text-sm hover:text-gray-600">
-              Summary
-            </Link>
-            <Link href="#experience" className="text-sm hover:text-gray-600">
-              Experience
-            </Link>
-            <Link href="#skills" className="text-sm hover:text-gray-600">
-              Skills
-            </Link>
-            <Link href="#education" className="text-sm hover:text-gray-600">
-              Education
-            </Link>
-            <Link
-              href="#certifications"
-              className="text-sm hover:text-gray-600"
-            >
-              Certifications
-            </Link>
-            <Link href="#contact" className="text-sm hover:text-gray-600">
-              Contact
-            </Link>
-          </div>
-          <div className="flex items-center space-x-2">
-            <button
-              onClick={handlePrint}
-              className="p-2 border border-gray-300 rounded flex items-center text-sm"
-              aria-label="Print CV"
-            >
-              <FiPrinter size={16} className="mr-1" />
-              <span className="hidden sm:inline">Print CV</span>
-            </button>
-            <button
-              className="p-2 border border-gray-300 rounded md:hidden"
-              onClick={toggleMobileMenu}
-              aria-label="Toggle mobile menu"
-            >
-              {mobileMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
-            </button>
-          </div>
-        </nav>
+      <header className="px-4 py-6 print:hidden md:sticky md:top-0 md:z-50 md:bg-white md:shadow-sm">
+        <div className="container mx-auto">
+          <nav className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              {/* <span className="text-lg font-semibold">Personal Online CV</span> */}
+            </div>
+            <div className="hidden md:flex items-center space-x-6 absolute left-1/2 transform -translate-x-1/2">
+              <Link href="#summary" className="text-sm hover:text-gray-600">
+                Summary
+              </Link>
+              <Link href="#experience" className="text-sm hover:text-gray-600">
+                Experience
+              </Link>
+              <Link href="#skills" className="text-sm hover:text-gray-600">
+                Skills
+              </Link>
+              <Link href="#education" className="text-sm hover:text-gray-600">
+                Education
+              </Link>
+              <Link
+                href="#certifications"
+                className="text-sm hover:text-gray-600"
+              >
+                Certifications
+              </Link>
+              <Link href="#contact" className="text-sm hover:text-gray-600">
+                Contact
+              </Link>
+            </div>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={handlePrint}
+                className="p-2 border border-gray-300 rounded flex items-center text-sm"
+                aria-label="Print CV"
+              >
+                <FiPrinter size={16} className="mr-1" />
+                <span className="hidden sm:inline">Print CV</span>
+              </button>
+              <button
+                className="p-2 border border-gray-300 rounded md:hidden"
+                onClick={toggleMobileMenu}
+                aria-label="Toggle mobile menu"
+              >
+                {mobileMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+              </button>
+            </div>
+          </nav>
+        </div>
       </header>
 
       {/* Mobile Menu */}

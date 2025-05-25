@@ -13,29 +13,7 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowUp, ArrowDown, Edit, Trash2, Plus } from 'lucide-react';
-
-interface ProfileDataTabProps {
-  profileData: any;
-  setProfileData: (data: any) => void;
-  editMode: 'visual' | 'json';
-  setEditMode: (mode: 'visual' | 'json') => void;
-  saving: boolean;
-  handleSave: (file: string, data: any) => void;
-  handleProfileDataChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  handleProfileFieldChange: (field: string, value: string) => void;
-  addLanguage: () => void;
-  editLanguage: (lang: any, index: number) => void;
-  deleteLanguage: (index: number) => void;
-  moveLanguage: (index: number, direction: 'up' | 'down') => void;
-  addEducation: () => void;
-  editEducation: (edu: any, index: number) => void;
-  deleteEducation: (index: number) => void;
-  moveEducation: (index: number, direction: 'up' | 'down') => void;
-  addCertification: () => void;
-  editCertification: (cert: any, index: number) => void;
-  deleteCertification: (index: number) => void;
-  moveCertification: (index: number, direction: 'up' | 'down') => void;
-}
+import { ProfileDataTabProps } from '@/types/admin-components';
 
 export default function ProfileDataTab({
   profileData,

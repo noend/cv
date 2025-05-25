@@ -9,14 +9,7 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-
-interface CertificationDialogProps {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-  currentCertification: { name: string; issuer?: string; date?: string; _index?: number } | null;
-  setCurrentCertification: (cert: { name: string; issuer?: string; date?: string; _index?: number } | null) => void;
-  saveCertification: () => void;
-}
+import { CertificationDialogProps } from '@/types/admin-components';
 
 const CertificationDialog: React.FC<CertificationDialogProps> = ({
   open,

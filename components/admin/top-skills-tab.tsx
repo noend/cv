@@ -7,22 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { X, ArrowUp, ArrowDown } from "lucide-react";
-
-interface TopSkillsTabProps {
-  topSkills: string[];
-  setTopSkills: (skills: string[]) => void;
-  editMode: "visual" | "json";
-  setEditMode: (mode: "visual" | "json") => void;
-  saving: boolean;
-  handleSave: (file: string, data: any) => void;
-  handleTopSkillsChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  addTopSkill: () => void;
-  removeTopSkill: (skill: string) => void;
-  moveTopSkill: (index: number, direction: "up" | "down") => void;
-  generateAutomaticTopSkills: () => void;
-  newSkill: string;
-  setNewSkill: (skill: string) => void;
-}
+import { TopSkillsTabProps } from "@/types/admin-components";
 
 export default function TopSkillsTab({
   topSkills,
