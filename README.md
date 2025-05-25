@@ -30,7 +30,7 @@
 
 Planned features under development:
 
-- [ ] Add image upload support (e.g., profile picture)
+- [x] Add image upload support (e.g., profile picture)
 - [ ] Expand contact and social media link options
 - [ ] Add AI assistance to improve and polish CV text
 - [ ] Introduce multiple visual templates for printable CVs

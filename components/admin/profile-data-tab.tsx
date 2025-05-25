@@ -14,6 +14,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { ArrowUp, ArrowDown, Edit, Trash2, Plus } from 'lucide-react';
 import { ProfileDataTabProps } from '@/types/admin-components';
+import ImageUpload from '@/components/admin/image-upload';
 
 export default function ProfileDataTab({
   profileData,
@@ -108,8 +109,7 @@ export default function ProfileDataTab({
                   />
                 </div>
               </div>
-              
-              <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="linkedin" className="text-sm font-medium">LinkedIn</label>
                   <Input 
@@ -127,26 +127,19 @@ export default function ProfileDataTab({
                     onChange={(e) => handleProfileFieldChange('phone', e.target.value)}
                   />
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="profileImageUrl" className="text-sm font-medium">Profile Image URL</label>
-                  <Input 
-                    id="profileImageUrl" 
-                    value={profileData.profileImageUrl || ''} 
-                    onChange={(e) => handleProfileFieldChange('profileImageUrl', e.target.value)}
-                  />
-                  {profileData.profileImageUrl && (
-                    <div className="mt-2 flex items-center gap-2">
-                      <span className="text-xs text-gray-500">Preview:</span>
-                      <img
-                        src={profileData.profileImageUrl}
-                        alt="Profile Preview"
-                        className="w-14 h-14 rounded-full object-cover border "
-                        style={{ minWidth: 40, minHeight: 40 }}
-                      />
-                    </div>
-                  )}
-                </div>
               </div>
+
+              {/* Profile Image Upload Section */}
+              <ImageUpload
+                currentImageUrl={profileData.profileImageUrl || ''}
+                currentWebUrl={profileData.profileImageWebUrl}
+                currentPdfUrl={profileData.profileImagePdfUrl}
+                onImageChange={(imageUrl, webUrl, pdfUrl) => {
+                  handleProfileFieldChange('profileImageUrl', imageUrl);
+                  if (webUrl) handleProfileFieldChange('profileImageWebUrl', webUrl);
+                  if (pdfUrl) handleProfileFieldChange('profileImagePdfUrl', pdfUrl);
+                }}
+              />
               
               <div className="space-y-2">
                 <label htmlFor="summary" className="text-sm font-medium">Summary</label>

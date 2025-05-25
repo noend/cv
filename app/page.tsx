@@ -17,6 +17,7 @@ import { SkillTag } from "@/components/skill-tag";
 import { experiences } from "@/data/cv-data";
 import { topSkills } from "@/data/topSkills";
 import { userProfile } from "@/data/user-profile";
+import { getProfileImageUrl } from "@/lib/image-utils";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -116,7 +117,7 @@ export default function Home() {
         <section className="flex flex-col items-center mb-12 print:mb-6 print:items-start print:flex-row print:gap-6">
           <div className="w-32 h-32 rounded-full overflow-hidden mb-4 print:mb-0 print:w-24 print:h-24">
             <Image
-              src={userProfile.profileImageUrl}
+              src={getProfileImageUrl(userProfile, 'web')}
               alt={`Profile picture of ${userProfile.name}`}
               width={128}
               height={128}

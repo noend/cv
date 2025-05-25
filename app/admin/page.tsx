@@ -38,6 +38,8 @@ export default function AdminPage() {
     email: "",
     linkedin: "",
     profileImageUrl: "",
+    profileImageWebUrl: "",
+    profileImagePdfUrl: "",
     summary: "",
     languages: [],
     education: [],

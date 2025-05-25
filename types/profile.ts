@@ -18,6 +18,8 @@ export interface UserProfile {
   title: string;
   location: string;
   profileImageUrl: string;
+  profileImageWebUrl?: string; // Optimized for web display
+  profileImagePdfUrl?: string; // Optimized for PDF generation
   summary: string;
   languages: Array<{
     name: string;

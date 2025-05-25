@@ -72,3 +72,18 @@ export interface CertificationDialogProps {
   ) => void;
   saveCertification: () => void;
 }
+
+export interface ImageUploadProps {
+  currentImageUrl: string;
+  currentWebUrl?: string;
+  currentPdfUrl?: string;
+  onImageChange: (imageUrl: string, webUrl?: string, pdfUrl?: string) => void;
+}
+
+export interface ImageUploadResponse {
+  success: boolean;
+  webUrl?: string;
+  pdfUrl?: string;
+  message?: string;
+  error?: string;
+}
