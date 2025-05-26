@@ -11,6 +11,8 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
+import { AIEnhancedInput } from '@/components/admin/ai-enhanced-input';
+import { AIEnhancedTextarea } from '@/components/admin/ai-enhanced-textarea';
 import { X } from 'lucide-react';
 import { ExperienceEntry } from '@/types';
 
@@ -49,46 +51,48 @@ const ExperienceDialog: React.FC<ExperienceDialogProps> = ({
       </DialogHeader>
       {currentExperience && (
         <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
+          <div className="grid grid-cols-2 gap-4">            <div className="space-y-2">
               <label htmlFor="title" className="text-sm font-medium">Title</label>
-              <Input 
+              <AIEnhancedInput 
                 id="title" 
+                fieldName="job title"
                 value={currentExperience.title} 
                 onChange={(e) => setCurrentExperience({ ...currentExperience, title: e.target.value })}
               />
             </div>
             <div className="space-y-2">
               <label htmlFor="company" className="text-sm font-medium">Company</label>
-              <Input 
+              <AIEnhancedInput 
                 id="company" 
+                fieldName="company name"
                 value={currentExperience.company} 
                 onChange={(e) => setCurrentExperience({ ...currentExperience, company: e.target.value })}
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
+          <div className="grid grid-cols-2 gap-4">            <div className="space-y-2">
               <label htmlFor="dateRange" className="text-sm font-medium">Date Range</label>
-              <Input 
+              <AIEnhancedInput 
                 id="dateRange" 
+                fieldName="date range"
                 value={currentExperience.dateRange} 
                 onChange={(e) => setCurrentExperience({ ...currentExperience, dateRange: e.target.value })}
               />
             </div>
             <div className="space-y-2">
               <label htmlFor="location" className="text-sm font-medium">Location (optional)</label>
-              <Input 
+              <AIEnhancedInput 
                 id="location" 
+                fieldName="job location"
                 value={currentExperience.location || ''} 
                 onChange={(e) => setCurrentExperience({ ...currentExperience, location: e.target.value })}
               />
             </div>
-          </div>
-          <div className="space-y-2">
+          </div>          <div className="space-y-2">
             <label htmlFor="description" className="text-sm font-medium">Description</label>
-            <Textarea 
+            <AIEnhancedTextarea 
               id="description" 
+              fieldName="job description"
               rows={5}
               value={currentExperience.description} 
               onChange={(e) => setCurrentExperience({ ...currentExperience, description: e.target.value })}
@@ -107,9 +111,9 @@ const ExperienceDialog: React.FC<ExperienceDialogProps> = ({
                 </Badge>
               ))}
             </div>
-            <div className="flex gap-2">
-              <Input 
+            <div className="flex gap-2">              <AIEnhancedInput 
                 placeholder="Add new tag" 
+                fieldName="skill tag"
                 value={newSkill} 
                 onChange={(e) => setNewSkill(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && addTag()}

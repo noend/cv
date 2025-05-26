@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { AIEnhancedInput } from '@/components/admin/ai-enhanced-input';
 import { LanguageProficiency } from '@/types/profile';
 
 interface LanguageDialogProps {
@@ -39,9 +40,9 @@ const LanguageDialog: React.FC<LanguageDialogProps> = ({
       {currentLanguage && (
         <div className="grid gap-4 py-4">
           <div className="space-y-2">
-            <label htmlFor="name" className="text-sm font-medium">Language Name</label>
-            <Input 
+            <label htmlFor="name" className="text-sm font-medium">Language Name</label>            <AIEnhancedInput 
               id="name" 
+              fieldName="language name"
               value={currentLanguage.name} 
               onChange={(e) => setCurrentLanguage({ ...currentLanguage, name: e.target.value })}
             />

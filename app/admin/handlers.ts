@@ -328,12 +328,16 @@ export const generateAutomaticTopSkills = async (
       },
       body: JSON.stringify({ experiences })
     });
+    const data = await res.json();
 
     if (!res.ok) {
-      throw new Error("Failed to generate top skills");
+      throw new Error(data.error || "Failed to generate top skills");
     }
 
-    const data = await res.json();
+    if (!data.topSkills || !Array.isArray(data.topSkills)) {
+      throw new Error("Invalid response format from AI service");
+    }
+
     setTopSkills(data.topSkills);
 
     toast({

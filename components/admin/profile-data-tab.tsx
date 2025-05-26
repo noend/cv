@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
+import { AIEnhancedInput } from '@/components/admin/ai-enhanced-input';
+import { AIEnhancedTextarea } from '@/components/admin/ai-enhanced-textarea';
 import { 
   Card, 
   CardContent, 
@@ -71,57 +73,60 @@ export default function ProfileDataTab({
               <CardTitle>Basic Information</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
+              <div className="grid grid-cols-2 gap-4">                <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">Name</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="name" 
-                    value={profileData.name || ''} 
+                    value={profileData.name || ''}
+                    fieldName="name" 
                     onChange={(e) => handleProfileFieldChange('name', e.target.value)}
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="title" className="text-sm font-medium">Title</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="title" 
-                    value={profileData.title || ''} 
+                    value={profileData.title || ''}
+                    fieldName="professional title" 
                     onChange={(e) => handleProfileFieldChange('title', e.target.value)}
                   />
                 </div>
               </div>
               
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
+              <div className="grid grid-cols-2 gap-4">                <div className="space-y-2">
                   <label htmlFor="location" className="text-sm font-medium">Location</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="location" 
+                    fieldName="location"
                     value={profileData.location || ''} 
                     onChange={(e) => handleProfileFieldChange('location', e.target.value)}
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">Email</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="email" 
+                    fieldName="email"
                     type="email"
                     value={profileData.email || ''} 
                     onChange={(e) => handleProfileFieldChange('email', e.target.value)}
                   />
                 </div>
               </div>
-                <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
+                <div className="grid grid-cols-2 gap-4">                <div className="space-y-2">
                   <label htmlFor="linkedin" className="text-sm font-medium">LinkedIn</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="linkedin" 
+                    fieldName="LinkedIn URL"
                     value={profileData.linkedin || ''} 
                     onChange={(e) => handleProfileFieldChange('linkedin', e.target.value)}
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="phone" className="text-sm font-medium">Phone</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="phone" 
+                    fieldName="phone"
                     type="tel"
                     value={profileData.phone || ''} 
                     onChange={(e) => handleProfileFieldChange('phone', e.target.value)}
@@ -143,11 +148,11 @@ export default function ProfileDataTab({
                   });
                 }}
               />
-              
-              <div className="space-y-2">
+                <div className="space-y-2">
                 <label htmlFor="summary" className="text-sm font-medium">Summary</label>
-                <Textarea 
+                <AIEnhancedTextarea 
                   id="summary" 
+                  fieldName="professional summary"
                   rows={5}
                   value={profileData.summary || ''} 
                   onChange={(e) => handleProfileFieldChange('summary', e.target.value)}

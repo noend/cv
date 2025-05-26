@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+import { AIEnhancedInput } from "./ai-enhanced-input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { X, ArrowUp, ArrowDown } from "lucide-react";
@@ -60,8 +61,9 @@ export default function TopSkillsTab({
           />
         : <div className="space-y-4">
             <div className="flex gap-2">
-              <Input
+              {" "}<AIEnhancedInput
                 placeholder="Add new skill"
+                fieldName="professional skill"
                 value={newSkill}
                 onChange={e => setNewSkill(e.target.value)}
                 onKeyDown={e => e.key === "Enter" && addTopSkill()}
