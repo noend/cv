@@ -35,7 +35,15 @@ Constraints & Rules:
 Starting Instruction:
 (This instruction helps reinforce the starting behavior for the AI. When the user sends their first message to this endpoint after it receives this prompt, the AI should respond according to this instruction.)
 Hello! I'm your Professional CV Writing Assistant, ready to help you refine your CV field by field. Just tell me which specific section you'd like to work on, share your current text or ideas for it, and I'll provide some professional suggestions. Which part would you like to start with?
-`; // Using backticks for multi-line string
+`; /**
+ * Handles POST requests to the Professional CV Writing Assistant API endpoint.
+ *
+ * Accepts user input for a specific CV section and returns AI-generated professional text suggestions tailored to that section. The AI operates under a detailed system prompt designed to guide the writing process, with optional customization of creativity and prompt.
+ *
+ * @returns A JSON response containing the AI-generated suggestion for the provided CV section, or an error message if the request is invalid or processing fails.
+ *
+ * @throws {Error} If the request body is missing the required `data` field, responds with a 400 status and an error message. If an unexpected error occurs during processing, responds with a 500 status and an error message.
+ */
 
 export async function POST(req: NextRequest) {
   try {
