@@ -8,10 +8,23 @@ import { OpenRouterOptions } from "../types/index";
 export async function getOpenRouterAnswer({
   systemInput,
   data,
-  creativity = 0.2
+  creativity = 0.2,
+  signal,
+  customModel
 }: OpenRouterOptions): Promise<string> {
+  // Validate that systemInput and data are not empty
+  if (!systemInput || systemInput.trim() === "") {
+    throw new Error("System input cannot be empty");
+  }
+
+  if (!data || data.trim() === "") {
+    throw new Error("User data cannot be empty");
+  }
+
   const apiKey = process.env.OPENROUTER_KEY;
-  const model = process.env.OPENROUTER_MODEL || "openai/gpt-4.1-nano";
+  // Use customModel if provided, otherwise fall back to env variable or default
+  const model =
+    customModel || process.env.OPENROUTER_MODEL || "openai/gpt-4.1-nano";
   if (!apiKey) throw new Error("OPENROUTER_KEY is not set in environment");
 
   const response = await fetch(
@@ -22,6 +35,8 @@ export async function getOpenRouterAnswer({
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json"
       },
+      // Add signal for timeout handling if provided
+      ...(signal && { signal }),
       body: JSON.stringify({
         model,
         messages: [
