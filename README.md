@@ -145,3 +145,22 @@ This project is open-source and available under the [MIT License](LICENSE).
 ## 🙌 Acknowledgements
 
 Thanks to all contributors and open-source libraries that make this project possible.
+
+---
+
+## 🖼️ Image Uploads & Version Control
+
+Uploaded images (such as profile pictures) are stored in the `/public/uploads` directory. This folder is included in `.gitignore` by default to avoid accidentally committing large or sensitive files. A `gitkeep` file is present to ensure the folder exists in the repository structure.
+
+**If you want to commit uploaded images (e.g., profile-\*.webp) to your repository:**
+
+- You must explicitly add them with the `-f` (force) flag, since `/public/uploads` is git-ignored:
+
+```bash
+git add .\public\uploads\profile-* -f
+```
+
+- This will add all matching uploaded images, not just the modified files.
+- Remember to commit and push after adding.
+
+> **Note:** If you do not force-add, new or updated images in `/public/uploads` will not be tracked by git and will not appear on your deployed site.
