@@ -135,7 +135,7 @@ Respond with ONLY the improved text without any explanations or additional text.
   return (
     <div className="relative">
       <Textarea
-        className={`${className} pr-10 resize-none`}
+        className={`${className} pr-12 pb-10 resize-none`}
         value={value}
         onChange={onChange}
         ref={ref}
@@ -145,13 +145,15 @@ Respond with ONLY the improved text without any explanations or additional text.
         type="button"
         variant="ghost"
         size="icon"
-        className="absolute top-2 right-2 bg-background"
+        className="absolute top-2 right-2 bg-background hover:bg-gray-100"
         onClick={handleAIClick}
         disabled={isLoading}
         aria-label={
-          isLoading ? "Enhancing content with AI..." : "Enhance content with AI"
+          isLoading
+            ? "Enhancing content with AI..."
+            : "Enhance content with AI using machine learning"
         }
-        title="AI enhance"
+        title="AI enhance content"
       >
         {isLoading
           ? <Loader2 className="h-4 w-4 animate-spin" />
