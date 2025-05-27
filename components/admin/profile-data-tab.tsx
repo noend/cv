@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
+import { AIEnhancedInput } from '@/components/admin/ai-enhanced-input';
+import { AIEnhancedTextarea } from '@/components/admin/ai-enhanced-textarea';
 import { 
   Card, 
   CardContent, 
@@ -16,6 +18,34 @@ import { ArrowUp, ArrowDown, Edit, Trash2, Plus } from 'lucide-react';
 import { ProfileDataTabProps } from '@/types/admin-components';
 import ImageUpload from '@/components/admin/image-upload';
 
+/**
+ * Renders a user profile editing interface with both visual and JSON editing modes.
+ *
+ * Provides structured forms for editing basic profile information, languages, education, and certifications, as well as a JSON editor for advanced editing. Supports adding, editing, deleting, and reordering list items, and allows profile image uploads. All data changes and persistence actions are delegated to handler functions provided via props.
+ *
+ * @param profileData - The current user profile data to display and edit.
+ * @param setProfileData - Updates the profile data state.
+ * @param editMode - The current editing mode, either "visual" or "json".
+ * @param setEditMode - Changes the editing mode.
+ * @param saving - Indicates whether a save operation is in progress.
+ * @param handleSave - Invoked to persist the profile data.
+ * @param handleProfileDataChange - Handles changes in the JSON editor.
+ * @param handleProfileFieldChange - Handles changes to individual profile fields in the visual editor.
+ * @param addLanguage - Adds a new language entry.
+ * @param editLanguage - Edits an existing language entry.
+ * @param deleteLanguage - Deletes a language entry.
+ * @param moveLanguage - Moves a language entry up or down in the list.
+ * @param addEducation - Adds a new education entry.
+ * @param editEducation - Edits an existing education entry.
+ * @param deleteEducation - Deletes an education entry.
+ * @param moveEducation - Moves an education entry up or down in the list.
+ * @param addCertification - Adds a new certification entry.
+ * @param editCertification - Edits an existing certification entry.
+ * @param deleteCertification - Deletes a certification entry.
+ * @param moveCertification - Moves a certification entry up or down in the list.
+ *
+ * @remark The component does not perform internal validation or error handling; all data management is handled externally via the provided handler functions.
+ */
 export default function ProfileDataTab({
   profileData,
   setProfileData,
@@ -71,57 +101,60 @@ export default function ProfileDataTab({
               <CardTitle>Basic Information</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
+              <div className="grid grid-cols-2 gap-4">                <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">Name</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="name" 
-                    value={profileData.name || ''} 
+                    value={profileData.name || ''}
+                    fieldName="name" 
                     onChange={(e) => handleProfileFieldChange('name', e.target.value)}
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="title" className="text-sm font-medium">Title</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="title" 
-                    value={profileData.title || ''} 
+                    value={profileData.title || ''}
+                    fieldName="professional title" 
                     onChange={(e) => handleProfileFieldChange('title', e.target.value)}
                   />
                 </div>
               </div>
               
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
+              <div className="grid grid-cols-2 gap-4">                <div className="space-y-2">
                   <label htmlFor="location" className="text-sm font-medium">Location</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="location" 
+                    fieldName="location"
                     value={profileData.location || ''} 
                     onChange={(e) => handleProfileFieldChange('location', e.target.value)}
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">Email</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="email" 
+                    fieldName="email"
                     type="email"
                     value={profileData.email || ''} 
                     onChange={(e) => handleProfileFieldChange('email', e.target.value)}
                   />
                 </div>
               </div>
-                <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
+                <div className="grid grid-cols-2 gap-4">                <div className="space-y-2">
                   <label htmlFor="linkedin" className="text-sm font-medium">LinkedIn</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="linkedin" 
+                    fieldName="LinkedIn URL"
                     value={profileData.linkedin || ''} 
                     onChange={(e) => handleProfileFieldChange('linkedin', e.target.value)}
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="phone" className="text-sm font-medium">Phone</label>
-                  <Input 
+                  <AIEnhancedInput 
                     id="phone" 
+                    fieldName="phone"
                     type="tel"
                     value={profileData.phone || ''} 
                     onChange={(e) => handleProfileFieldChange('phone', e.target.value)}
@@ -143,11 +176,11 @@ export default function ProfileDataTab({
                   });
                 }}
               />
-              
-              <div className="space-y-2">
+                <div className="space-y-2">
                 <label htmlFor="summary" className="text-sm font-medium">Summary</label>
-                <Textarea 
+                <AIEnhancedTextarea 
                   id="summary" 
+                  fieldName="professional summary"
                   rows={5}
                   value={profileData.summary || ''} 
                   onChange={(e) => handleProfileFieldChange('summary', e.target.value)}

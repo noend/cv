@@ -4,11 +4,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+import { AIEnhancedInput } from "./ai-enhanced-input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { X, ArrowUp, ArrowDown } from "lucide-react";
 import { TopSkillsTabProps } from "@/types/admin-components";
 
+/**
+ * Displays and manages a list of top professional skills with both visual and JSON editing modes.
+ *
+ * Provides an interface for adding, removing, reordering, and saving top skills, as well as automatically generating skill suggestions. Users can switch between a visual editor and direct JSON editing.
+ */
 export default function TopSkillsTab({
   topSkills,
   setTopSkills,
@@ -60,8 +66,9 @@ export default function TopSkillsTab({
           />
         : <div className="space-y-4">
             <div className="flex gap-2">
-              <Input
+              {" "}<AIEnhancedInput
                 placeholder="Add new skill"
+                fieldName="professional skill"
                 value={newSkill}
                 onChange={e => setNewSkill(e.target.value)}
                 onKeyDown={e => e.key === "Enter" && addTopSkill()}
