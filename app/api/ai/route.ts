@@ -35,7 +35,8 @@ Constraints & Rules:
 Starting Instruction:
 (This instruction helps reinforce the starting behavior for the AI. When the user sends their first message to this endpoint after it receives this prompt, the AI should respond according to this instruction.)
 Hello! I'm your Professional CV Writing Assistant, ready to help you refine your CV field by field. Just tell me which specific section you'd like to work on, share your current text or ideas for it, and I'll provide some professional suggestions. Which part would you like to start with?
-`; /**
+`;
+/**
  * Handles POST requests to the Professional CV Writing Assistant API endpoint.
  *
  * Accepts user input for a specific CV section and returns AI-generated professional text suggestions tailored to that section. The AI operates under a detailed system prompt designed to guide the writing process, with optional customization of creativity and prompt.
@@ -52,7 +53,7 @@ export async function POST(req: NextRequest) {
 
     // Check authentication by verifying the admin_authenticated cookie
     const isAuthenticated = req.cookies.has("admin_authenticated");
-    
+
     // Get the API key from the request header if provided
     const apiKey = req.headers.get("x-api-key");
     const validApiKey = process.env.AI_API_KEY;
@@ -64,14 +65,15 @@ export async function POST(req: NextRequest) {
         { error: "Unauthorized: Authentication required" },
         { status: 401 }
       );
-    }    // Check rate limiting (optional enhancement)
+    } // Check rate limiting (optional enhancement)
     // This is a simple example - in production you would use a more robust solution
-    const clientIp = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "";
+    const clientIp =
+      req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "";
     const requestsPerMinuteLimit = 10; // Adjust as needed
-    
+
     // In a real implementation, you would check against a cache/database
     // For now we'll skip the actual implementation but keep the structure
-    
+
     // Parse the request body with error handling
     let body;
     try {
@@ -89,9 +91,9 @@ export async function POST(req: NextRequest) {
         { error: "Invalid request: Request body must be a valid JSON object" },
         { status: 400 }
       );
-    }    // Extract and validate required fields
+    } // Extract and validate required fields
     const { data, creativity, systemInput: userSystemInput, model } = body;
-    
+
     // Validate data field (required)
     if (data === undefined) {
       return NextResponse.json(
@@ -107,15 +109,18 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
-    
+
     // Check data length to prevent abuse
     if (data.length > 10000) {
       return NextResponse.json(
-        { error: "Invalid data: content exceeds maximum length (10000 characters)" },
+        {
+          error:
+            "Invalid data: content exceeds maximum length (10000 characters)"
+        },
         { status: 400 }
       );
     }
-    
+
     // Check for empty content after trimming
     if (data.trim().length === 0) {
       return NextResponse.json(
@@ -132,7 +137,7 @@ export async function POST(req: NextRequest) {
           { status: 400 }
         );
       }
-      
+
       if (creativity < 0 || creativity > 1) {
         return NextResponse.json(
           { error: "Invalid creativity value: must be between 0 and 1" },
@@ -140,7 +145,7 @@ export async function POST(req: NextRequest) {
         );
       }
     }
-    
+
     // Validate systemInput if provided
     if (userSystemInput !== undefined) {
       if (typeof userSystemInput !== "string") {
@@ -149,16 +154,19 @@ export async function POST(req: NextRequest) {
           { status: 400 }
         );
       }
-      
+
       // Check for potential prompt injection or malicious input
       if (userSystemInput.length > 20000) {
         return NextResponse.json(
-          { error: "Invalid systemInput: exceeds maximum length (20000 characters)" },
+          {
+            error:
+              "Invalid systemInput: exceeds maximum length (20000 characters)"
+          },
           { status: 400 }
         );
       }
     }
-    
+
     // Validate model if provided (optional enhancement)
     if (model !== undefined) {
       if (typeof model !== "string") {
@@ -167,25 +175,30 @@ export async function POST(req: NextRequest) {
           { status: 400 }
         );
       }
-      
+
       // Validate against allowed models if needed
       const allowedModels = ["gpt-4", "gpt-3.5-turbo", "claude-3"]; // Example
       if (!allowedModels.includes(model)) {
         return NextResponse.json(
-          { error: `Invalid model: must be one of ${allowedModels.join(", ")}` },
+          {
+            error: `Invalid model: must be one of ${allowedModels.join(", ")}`
+          },
           { status: 400 }
         );
       }
-    }    // Use the specific CV writing assistant prompt as the system input if no custom systemInput provided
+    } // Use the specific CV writing assistant prompt as the system input if no custom systemInput provided
     const systemInput = userSystemInput || CV_WRITING_ASSISTANT_PROMPT;
 
     // Set up request timeout with AbortController
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 60000); // 60-second timeout
-    
+
+    let aiResponse: string;
+
     try {
       // Call OpenRouter service with validated inputs
-      // 'data' from the request body will serve as the user's input for the current field      const aiResponse = await getOpenRouterAnswer({
+      // 'data' from the request body will serve as the user's input for the current field
+      aiResponse = await getOpenRouterAnswer({
         systemInput,
         data, // This contains the user's specific input for the current field
         creativity: creativity !== undefined ? creativity : 0.2, // Allow user to override, default to 0.2
@@ -195,24 +208,26 @@ export async function POST(req: NextRequest) {
 
       // Clear the timeout
       clearTimeout(timeoutId);
-      
+
       // Validate AI response more thoroughly
       if (!aiResponse) {
         throw new Error("Failed to get response from AI service");
       }
-      
-      if (typeof aiResponse !== 'string') {
+
+      if (typeof aiResponse !== "string") {
         throw new Error("Invalid response format from AI service");
       }
+
+      // Log successful API calls (optional)
+      console.log(`AI API call successful: ${new Date().toISOString()}`);
+
+      // Return the AI response
+      return NextResponse.json({ response: aiResponse });
     } catch (error) {
       // Make sure to clear the timeout if there was an error
       clearTimeout(timeoutId);
       throw error;
-    }// Log successful API calls (optional)
-    console.log(`AI API call successful: ${new Date().toISOString()}`);
-    
-    // Return the AI response
-    return NextResponse.json({ response: aiResponse });
+    }
   } catch (error: any) {
     console.error("AI endpoint error:", error);
 
@@ -227,7 +242,10 @@ export async function POST(req: NextRequest) {
         { error: "AI service error: Failed to connect to AI provider" },
         { status: 503 }
       );
-    } else if (error.message?.includes("timeout") || error.name === "AbortError") {
+    } else if (
+      error.message?.includes("timeout") ||
+      error.name === "AbortError"
+    ) {
       return NextResponse.json(
         { error: "Request timeout: The AI service took too long to respond" },
         { status: 504 }
@@ -237,12 +255,18 @@ export async function POST(req: NextRequest) {
         { error: "Invalid response from AI service" },
         { status: 502 }
       );
-    } else if (error.message?.includes("429") || error.message?.includes("too many requests")) {
+    } else if (
+      error.message?.includes("429") ||
+      error.message?.includes("too many requests")
+    ) {
       return NextResponse.json(
         { error: "Rate limit exceeded: Please try again later" },
         { status: 429 }
       );
-    } else if (error.message?.includes("403") || error.message?.includes("forbidden")) {
+    } else if (
+      error.message?.includes("403") ||
+      error.message?.includes("forbidden")
+    ) {
       return NextResponse.json(
         { error: "API access forbidden: Permission denied" },
         { status: 403 }
