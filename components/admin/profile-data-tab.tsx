@@ -18,6 +18,34 @@ import { ArrowUp, ArrowDown, Edit, Trash2, Plus } from 'lucide-react';
 import { ProfileDataTabProps } from '@/types/admin-components';
 import ImageUpload from '@/components/admin/image-upload';
 
+/**
+ * Renders a user profile editing interface with both visual and JSON editing modes.
+ *
+ * Provides structured forms for editing basic profile information, languages, education, and certifications, as well as a JSON editor for advanced editing. Supports adding, editing, deleting, and reordering list items, and allows profile image uploads. All data changes and persistence actions are delegated to handler functions provided via props.
+ *
+ * @param profileData - The current user profile data to display and edit.
+ * @param setProfileData - Updates the profile data state.
+ * @param editMode - The current editing mode, either "visual" or "json".
+ * @param setEditMode - Changes the editing mode.
+ * @param saving - Indicates whether a save operation is in progress.
+ * @param handleSave - Invoked to persist the profile data.
+ * @param handleProfileDataChange - Handles changes in the JSON editor.
+ * @param handleProfileFieldChange - Handles changes to individual profile fields in the visual editor.
+ * @param addLanguage - Adds a new language entry.
+ * @param editLanguage - Edits an existing language entry.
+ * @param deleteLanguage - Deletes a language entry.
+ * @param moveLanguage - Moves a language entry up or down in the list.
+ * @param addEducation - Adds a new education entry.
+ * @param editEducation - Edits an existing education entry.
+ * @param deleteEducation - Deletes an education entry.
+ * @param moveEducation - Moves an education entry up or down in the list.
+ * @param addCertification - Adds a new certification entry.
+ * @param editCertification - Edits an existing certification entry.
+ * @param deleteCertification - Deletes a certification entry.
+ * @param moveCertification - Moves a certification entry up or down in the list.
+ *
+ * @remark The component does not perform internal validation or error handling; all data management is handled externally via the provided handler functions.
+ */
 export default function ProfileDataTab({
   profileData,
   setProfileData,

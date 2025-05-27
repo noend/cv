@@ -10,6 +10,11 @@ import { Badge } from "@/components/ui/badge";
 import { X, ArrowUp, ArrowDown } from "lucide-react";
 import { TopSkillsTabProps } from "@/types/admin-components";
 
+/**
+ * Displays and manages a list of top professional skills with both visual and JSON editing modes.
+ *
+ * Provides an interface for adding, removing, reordering, and saving top skills, as well as automatically generating skill suggestions. Users can switch between a visual editor and direct JSON editing.
+ */
 export default function TopSkillsTab({
   topSkills,
   setTopSkills,

@@ -7,8 +7,13 @@ import { userProfile } from "@/data/user-profile";
 const isDev = process.env.NODE_ENV === "development";
 
 /**
- * This route analyzes the user's experience and profile data to determine the most frequently used skills.
- * It counts occurrences of each skill/tag across all experiences and returns the most common ones.
+ * Handles a POST request to analyze experience data and return the top 10 most frequently used skills.
+ *
+ * Accepts a JSON payload containing an array of experience entries; if not provided, uses default imported data. Only available in development mode.
+ *
+ * @returns A JSON response with a `topSkills` array listing the most common skill tags.
+ *
+ * @remark Returns a 403 error if accessed outside development mode, and a 500 error if processing fails.
  */
 export async function POST(request: NextRequest) {
   if (!isDev) {
