@@ -48,8 +48,8 @@ export default function Home() {
             {userProfile.name} - {userProfile.title}
           </h1>
           <p>
-            Contact: {userProfile.email || "preslav.panayotov@gmail.com"},
-            {userProfile.linkedin || "www.linkedin.com/in/preslav-panayotov"}
+            Contact: {userProfile.email || ""},
+            {userProfile.linkedin || ""}
           </p>
           <p>
             Skills:{" "}
@@ -256,50 +256,48 @@ export default function Home() {
         <section id="contact" className="print:mb-6">
           <SectionHeading title="Contact" />
           <div className="space-y-2 print:flex print:space-y-0 print:space-x-6">
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <FiMail className="w-5 h-5 mr-2 print:w-4 print:h-4" />
               <span>
                 Email:{" "}
-                <img
-                  src={`/api/text-image?fieldType=email&size=24&color=%23222&bg=transparent`}
-                  alt="Email address"
-                  style={{
-                    display: "inline",
-                    verticalAlign: "middle",
-                    height: 24
-                  }}
-                  draggable={false}
-                />
+                <a 
+                  href={`mailto:${userProfile.email || ''}`}
+                  target="_blank" 
+                  title={`Email ${userProfile.name}`}
+                  rel="follow noopener noreferrer external"
+                  className="hover:underline"
+                >
+                  {userProfile.email || ""}
+                </a>
               </span>
             </div>
             <div className="flex items-center">
               <FiPhone className="w-5 h-5 mr-2 print:w-4 print:h-4" />
               <span>
                 Phone:{" "}
-                <img
-                  src={`/api/text-image?fieldType=phone&size=24&color=%23222&bg=transparent`}
-                  alt="Phone number"
-                  style={{
-                    display: "inline",
-                    verticalAlign: "middle",
-                    height: 24
-                  }}
-                  draggable={false}
-                />
+                <a 
+                  href={`tel:${userProfile.phone || ''}`}
+                  target="_blank" 
+                  title={`Call ${userProfile.name}`}
+                  rel="follow noopener noreferrer external"
+                  className="hover:underline"
+                >
+                  {userProfile.phone || ""}
+                </a>
               </span>
-            </div>
+            </div> */}
             <div className="flex items-center">
               <FiLinkedin className="w-5 h-5 mr-2 print:w-4 print:h-4" />
               <span>
                 LinkedIn:{" "}
                 <a 
-                  href={`https://${userProfile.linkedin?.replace(/^https?:\/\//i, '') || 'www.linkedin.com/in/preslav-panayotov'}`}
+                  href={`https://${userProfile.linkedin?.replace(/^https?:\/\//i, '') || ''}`}
                   target="_blank" 
                   title={`LinkedIn Profile of ${userProfile.name}`}
                   rel="follow noopener noreferrer external"
                   className="hover:underline"
                 >
-                  {userProfile.linkedin?.replace(/^https?:\/\//i, '') || 'www.linkedin.com/in/preslav-panayotov'}
+                  {userProfile.linkedin?.replace(/^https?:\/\//i, '') || ''}
                 </a>
               </span>
             </div>
@@ -311,7 +309,7 @@ export default function Home() {
         <p>
           © {new Date().getFullYear()} {userProfile.name}. All rights reserved.
           <span className="ml-2 text-xs text-gray-400">
-            | powered by <a href="https://github.com/index-panayotov/ppanayotov-com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">ppanayotov</a>
+            {/* | powered by <a href="https://github.com/index-panayotov/ppanayotov-com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">ppanayotov</a> */}
           </span>
         </p>
       </footer>

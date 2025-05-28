@@ -1,13 +1,19 @@
 import type React from "react"
 import "./globals.css"
 import { Inter } from "next/font/google"
+import { userProfile } from "@/data/user-profile";
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Preslav Panayotov - Software Delivery Manager",
+  title: userProfile.name + " - " + userProfile.title,
+  keywords: [userProfile.name, userProfile.title, userProfile.location],
   description:
-    "CV of Preslav Panayotov, Software Delivery Manager with expertise in software engineering and team management",
+    "CV of " +
+    userProfile.name +
+    " - " +userProfile.title +
+    " based in " +
+    userProfile.location,
     generator: 'v0.dev'
 }
 

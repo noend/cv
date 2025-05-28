@@ -1,12 +1,12 @@
 export const topSkills = [
-  "Software Quality",
-  "Team Collaboration",
-  "Programming",
-  "Problem Solving",
-  "Client Requirements",
-  "Databases",
-  "Web Architecture",
-  "Communication",
-  "Hands-on Technical Leadership",
-  "Deployment Management"
+  "PHP",
+  "MySql",
+  "Laravel",
+  "Vue.js",
+  "Bootstrap",
+  "PhalconPhp",
+  "RDBMS",
+  "Postgres",
+  "MongoDB",
+  "Node.js"
 ];
