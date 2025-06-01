@@ -141,15 +141,15 @@ export default function Home() {
               {userProfile.location}
             </p>
           </div>
-        </section>
-
+        </section>        
         <section id="summary" className="mb-10 print:mb-6">
           <SectionHeading title="Summary" />
-          <p className="text-gray-700">
-            {userProfile.summary}
-          </p>
+          <div 
+            className="text-gray-700 mb-4 print:mb-2"
+            dangerouslySetInnerHTML={{ __html: userProfile.summary }}
+          />
 
-          <div className="print:hidden text-gray-700 mb-10 flex flex-wrap justify-center gap-2">
+          <div className="print:hidden text-gray-700 mb-10 flex flex-wrap gap-2">
             {topSkills.map((tag, index) => <SkillTag key={index} name={tag} />)}
           </div>
         </section>
@@ -222,35 +222,37 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
                 <h3 className="font-semibold">
                   {edu.institution}
-                </h3>
-                <span className="text-gray-500 text-sm">
+                </h3>                <span className="text-gray-500 text-sm">
                   {edu.dateRange}
                 </span>
               </div>
-              <p className="text-gray-700">
-                {edu.degree}, {edu.field}
-              </p>
+              <div 
+                className="text-gray-700"
+                dangerouslySetInnerHTML={{ __html: `${edu.degree}, ${edu.field}` }}
+              />
             </div>
           )}
         </section>
 
         <section id="certifications" className="mb-10 print:mb-6">
-          <SectionHeading title="Certifications" />
-          <ul className="list-disc list-inside space-y-1 text-gray-700">
-            {userProfile.certifications.map((cert, index) =>
-              <li key={index}>
-                {cert.name}
-                {cert.issuer &&
-                  <span>
-                    {" "}- {cert.issuer}
-                  </span>}
-                {cert.date &&
-                  <span className="text-gray-500 text-sm ml-1">
-                    ({cert.date})
-                  </span>}
-              </li>
-            )}
-          </ul>
+          <SectionHeading title="Certifications" />          
+          <div className="text-gray-700">
+            {userProfile.certifications.map((cert, index) => {
+              const certHtml = `
+                <div class="mb-1">
+                  ${cert.name}
+                  ${cert.issuer ? ` - ${cert.issuer}` : ''}
+                  ${cert.date ? `<span class="text-gray-500 text-sm ml-1">(${cert.date})</span>` : ''}
+                </div>
+              `;
+              return (
+                <div 
+                  key={index}
+                  dangerouslySetInnerHTML={{ __html: certHtml }}
+                />
+              );
+            })}
+          </div>
         </section>
 
         <section id="contact" className="print:mb-6">

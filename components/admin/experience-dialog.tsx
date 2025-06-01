@@ -9,10 +9,9 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { AIEnhancedInput } from '@/components/admin/ai-enhanced-input';
-import { AIEnhancedTextarea } from '@/components/admin/ai-enhanced-textarea';
+import { EnhancedEditor } from '@/components/admin/enhanced-editor';
 import { X } from 'lucide-react';
 import { ExperienceEntry } from '@/types';
 
@@ -90,12 +89,10 @@ const ExperienceDialog: React.FC<ExperienceDialogProps> = ({
             </div>
           </div>          <div className="space-y-2">
             <label htmlFor="description" className="text-sm font-medium">Description</label>
-            <AIEnhancedTextarea 
-              id="description" 
-              fieldName="job description"
-              rows={5}
+            <EnhancedEditor 
               value={currentExperience.description} 
-              onChange={(e) => setCurrentExperience({ ...currentExperience, description: e.target.value })}
+              onChange={(value) => setCurrentExperience({ ...currentExperience, description: value })}
+              fieldName="job description"
             />
           </div>
           <div className="space-y-2">

@@ -8,6 +8,9 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+  },  webpack: (config) => {
+    config.resolve.alias.tinymce = 'tinymce/tinymce.min.js';
+    return config;
   },
 }
 

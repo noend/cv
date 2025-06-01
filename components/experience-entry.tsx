@@ -35,10 +35,11 @@ export function ExperienceEntry({ title, company, dateRange, location, descripti
         <span className="text-gray-500 text-sm">{dateRange}</span>
       </div>
 
-      {location && <p className="text-gray-500 text-sm mb-2">{location}</p>}
-
-      {description && typeof description === "string" ? (
-        <p className="text-gray-700 mb-3">{description}</p>
+      {location && <p className="text-gray-500 text-sm mb-2">{location}</p>}      {description && typeof description === "string" ? (
+        <div 
+          className="text-gray-700 mb-3"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       ) : (
         Array.isArray(description) &&
         description.length > 0 && (
@@ -54,7 +55,7 @@ export function ExperienceEntry({ title, company, dateRange, location, descripti
         <>
           {/* Screen version - with toggle functionality */}
           <div className="mt-2 print:hidden">
-            <div className="flex flex-wrap gap-2 mb-2">
+            <div className="flex flex-wrap gap-2 mb-2 mt-5">
               {visibleTags.map((tag, index) => (
                 <SkillTag key={index} name={tag} />
               ))}

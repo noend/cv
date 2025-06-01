@@ -6,7 +6,7 @@ export const experiences: ExperienceEntry[] = [
     "company": "Delasport",
     "dateRange": "05/08/2024 – 14/04/2025",
     "location": "Sofia",
-    "description": "delivering solutions to iGaming partners\nBack-End Developer - I was part of an R&D team that created new and\nextended existing microservices. I used the latest PHP versions (8.1, 8.3) and\nthe latest versions of Laravel (11, 12). I also worked on legacy systems based\non PHP 5.6 and 7.2.",
+    "description": "<p>Delasport is a global leader in Sports Betting, Online Casino, and PAM, delivering solutions to iGaming partners Back-End Developer</p>\n<p>- I was part of an R&amp;D team that created new and extended existing microservices. I used the latest PHP versions (8.1, 8.3) and the latest versions of Laravel (11, 12). I also worked on legacy systems based on PHP 5.6 and 7.2.</p>",
     "tags": [
       "PHP",
       "Laravel",
@@ -24,7 +24,7 @@ export const experiences: ExperienceEntry[] = [
     "company": "CredoWeb",
     "dateRange": "14/02/2022 – 15/07/2024",
     "location": "Sofia",
-    "description": "CredoWeb is a digital platform that seeks to facilitate professional\ncommunication between all healthcare stakeholders and provide them with\na unique online space where they can exchange knowledge, opinions and\ninformation.\nBack End Developer - building and maintaining the server-side of web\napplications, REST APIs ( PHP, Laminas, Doctrine, RabitMQ, Elasticsearch )",
+    "description": "<p>CredoWeb is a digital platform that seeks to facilitate professional communication between all healthcare stakeholders and provide them with a unique online space where they can exchange knowledge, opinions and information.</p>\n<p>Back End Developer - building and maintaining the server-side of web applications, REST APIs ( PHP, Laminas, Doctrine, RabitMQ, Elasticsearch )</p>",
     "tags": [
       "PHP",
       "Laminas",
@@ -38,7 +38,7 @@ export const experiences: ExperienceEntry[] = [
     "company": "Advent Group",
     "dateRange": "19/02/2019 – 14/02/2022",
     "location": "Sofia",
-    "description": "Operating across the globe, Advent Group is a worldwide leader in in-person\nand online One-to-One education events and marketing solutions for the\nhigher education sector\nWeb Developer - extend and support existing company projects. I was part\nof the team, who RD new projects.\nUsed technologies: PHP (Phalconphp), MySql, JavaScript (JQuery, VueJs), Css\n(Bootstrap)",
+    "description": "<p>Operating across the globe, Advent Group is a worldwide leader in in-person and online One-to-One education events and marketing solutions for the higher education sector </p>\n<p>Web Developer - extend and support existing company projects.&nbsp;</p>\n<p>I was part of the team, who RD new projects. Used technologies: PHP (Phalconphp), MySql, JavaScript (JQuery, VueJs), Css (Bootstrap)</p>",
     "tags": [
       "PHP",
       "Phalconphp",
@@ -47,22 +47,6 @@ export const experiences: ExperienceEntry[] = [
       "JQuery",
       "Vue.js",
       "Bootstrap"
-    ]
-  },
-  {
-    "title": "Web Developer",
-    "company": "SAXO OOD",
-    "dateRange": "25/08/2012 – 21/09/2017",
-    "location": "Ruse",
-    "description": "Web Developer and Manager at yakobg.com, yakosport.ro, insportline.bg, hi-tec.com/bg\n\n- Developed and maintained e-commerce platforms using OpenCart (http://yakobg.com/), WordPress (http://yakobgblog.com/), and WooCommerce (http://spartan-sport.bg/), utilizing PHP, MySQL, jQuery, and Bootstrap.\n- Integrated data from various back-end services and databases to ensure data consistency and reliability.\n- Designed and developed responsive, user-centric websites to enhance user experience and engagement.\n- Implemented new features and functionalities to meet evolving business needs.\n- Ensured seamless website performance by optimizing load times and eliminating errors across pages.\n- Managed and maintained Linux-based (CentOS) web servers for optimal uptime and security.\n- Managed digital advertising campaigns through Google AdWords and analyzed website traffic and user behavior via Google Analytics to inform marketing strategies.",
-    "tags": [
-      "PHP",
-      "MySql",
-      "jQuery",
-      "Bootstrap",
-      "Wordpress",
-      "Woocomerce",
-      "Opencart"
     ]
   },
   {
@@ -76,6 +60,22 @@ export const experiences: ExperienceEntry[] = [
       "MySql",
       "Laravel",
       "Vue.js"
+    ]
+  },
+  {
+    "title": "Web Developer",
+    "company": "SAXO OOD",
+    "dateRange": "25/08/2012 – 21/09/2017",
+    "location": "Ruse",
+    "description": "<p>Web Developer and Manager at yakobg.com, yakosport.ro, insportline.bg, hi-tec.com/bg</p>\n<p>&nbsp;- Developed and maintained e-commerce platforms using OpenCart (http://yakobg.com/), WordPress (http://yakobgblog.com/), and WooCommerce (http://spartan-sport.bg/), utilizing PHP, MySQL, jQuery, and Bootstrap.</p>\n<p>- Integrated data from various back-end services and databases to ensure data consistency and reliability.&nbsp;<br>- Designed and developed responsive, user-centric websites to enhance user experience and engagement.&nbsp;<br>- Implemented new features and functionalities to meet evolving business needs.&nbsp;<br>- Ensured seamless website performance by optimizing load times and eliminating errors across pages.&nbsp;<br>- Managed and maintained Linux-based (CentOS) web servers for optimal uptime and security. <br>- Managed digital advertising campaigns through Google AdWords and analyzed website traffic and user behavior via Google Analytics to inform marketing strategies.</p>",
+    "tags": [
+      "PHP",
+      "MySql",
+      "jQuery",
+      "Bootstrap",
+      "Wordpress",
+      "Woocomerce",
+      "Opencart"
     ]
   },
   {

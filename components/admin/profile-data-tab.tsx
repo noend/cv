@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import { AIEnhancedInput } from '@/components/admin/ai-enhanced-input';
 import { AIEnhancedTextarea } from '@/components/admin/ai-enhanced-textarea';
+import { EnhancedEditor } from '@/components/admin/enhanced-editor';
 import { 
   Card, 
   CardContent, 
@@ -177,15 +178,13 @@ export default function ProfileDataTab({
                 }}
               />
                 <div className="space-y-2">
-                <label htmlFor="summary" className="text-sm font-medium">Summary</label>
-                <AIEnhancedTextarea 
-                  id="summary" 
-                  fieldName="professional summary"
-                  rows={5}
-                  value={profileData.summary || ''} 
-                  onChange={(e) => handleProfileFieldChange('summary', e.target.value)}
-                />
-              </div>
+                  <label htmlFor="summary" className="text-sm font-medium">Summary</label>
+                  <EnhancedEditor 
+                    value={profileData.summary || ''} 
+                    onChange={(value) => handleProfileFieldChange('summary', value)}
+                    fieldName="professional summary"
+                  />
+                </div>
             </CardContent>
           </Card>
           
