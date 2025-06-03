@@ -28,7 +28,7 @@ export function ExperienceEntry({ title, company, dateRange, location, descripti
   return (
     <div className="mb-6 print:mb-4">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
-        <h3 className="font-semibold">
+        <h3 className="text-lg text-grey-600 font-semibold">
           {title}
           {company && `, ${company}`}
         </h3>

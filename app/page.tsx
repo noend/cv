@@ -131,7 +131,7 @@ export default function Home() {
             />
           </div>
           <div className="text-center print:text-left">
-            <h1 className="text-2xl font-bold mb-1">
+            <h1 className="text-2xl font-bold mb-1 text-shadow-md shadow-gray-300/60 print:shadow-none">
               {userProfile.name}
             </h1>
             <h2 className="text-gray-600 mb-1">
@@ -222,37 +222,35 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
                 <h3 className="font-semibold">
                   {edu.institution}
-                </h3>                <span className="text-gray-500 text-sm">
+                </h3>
+                <span className="text-gray-500 text-sm">
                   {edu.dateRange}
                 </span>
               </div>
-              <div 
-                className="text-gray-700"
-                dangerouslySetInnerHTML={{ __html: `${edu.degree}, ${edu.field}` }}
-              />
+              <p className="text-gray-700">
+                {edu.degree}, {edu.field}
+              </p>
             </div>
           )}
         </section>
 
         <section id="certifications" className="mb-10 print:mb-6">
-          <SectionHeading title="Certifications" />          
-          <div className="text-gray-700">
-            {userProfile.certifications.map((cert, index) => {
-              const certHtml = `
-                <div class="mb-1">
-                  ${cert.name}
-                  ${cert.issuer ? ` - ${cert.issuer}` : ''}
-                  ${cert.date ? `<span class="text-gray-500 text-sm ml-1">(${cert.date})</span>` : ''}
-                </div>
-              `;
-              return (
-                <div 
-                  key={index}
-                  dangerouslySetInnerHTML={{ __html: certHtml }}
-                />
-              );
-            })}
-          </div>
+          <SectionHeading title="Certifications" />
+          <ul className="list-disc list-inside space-y-1 text-gray-700">
+            {userProfile.certifications.map((cert, index) =>
+              <li key={index}>
+                {cert.name}
+                {cert.issuer &&
+                  <span>
+                    {" "}- {cert.issuer}
+                  </span>}
+                {cert.date &&
+                  <span className="text-gray-500 text-sm ml-1">
+                    ({cert.date})
+                  </span>}
+              </li>
+            )}
+          </ul>
         </section>
 
         <section id="contact" className="print:mb-6">
@@ -311,7 +309,7 @@ export default function Home() {
         <p>
           © {new Date().getFullYear()} {userProfile.name}. All rights reserved.
           <span className="ml-2 text-xs text-gray-400">
-            {/* | powered by <a href="https://github.com/index-panayotov/ppanayotov-com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">ppanayotov</a> */}
+            | powered by <a href="https://github.com/index-panayotov/ppanayotov-com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">ppanayotov</a>
           </span>
         </p>
       </footer>

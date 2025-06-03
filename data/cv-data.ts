@@ -6,7 +6,7 @@ export const experiences: ExperienceEntry[] = [
     "company": "Delasport",
     "dateRange": "05/08/2024 – 14/04/2025",
     "location": "Sofia",
-    "description": "<p>Delasport is a global leader in Sports Betting, Online Casino, and PAM, delivering solutions to iGaming partners Back-End Developer</p>\n<p>- I was part of an R&amp;D team that created new and extended existing microservices. I used the latest PHP versions (8.1, 8.3) and the latest versions of Laravel (11, 12). I also worked on legacy systems based on PHP 5.6 and 7.2.</p>",
+    "description": "<p>Delasport is a global leader in Sports Betting, Online Casino, and PAM solutions, providing innovative offerings to iGaming partners.</p>\n<p>- Contributed to an R&amp;D team focused on developing new microservices and enhancing existing ones.&nbsp;</p>\n<p>- Utilized the latest PHP versions (8.1, 8.3) and Laravel frameworks (11, 12) to ensure modern, scalable solutions.&nbsp;</p>\n<p>- Maintained and improved legacy systems built on PHP 5.6 and 7.2, ensuring stability and performance.</p>",
     "tags": [
       "PHP",
       "Laravel",
@@ -16,7 +16,8 @@ export const experiences: ExperienceEntry[] = [
       "Postgres",
       "MongoDB",
       "Node.js",
-      "Typescript"
+      "Typescript",
+      "Agile"
     ]
   },
   {
@@ -24,13 +25,17 @@ export const experiences: ExperienceEntry[] = [
     "company": "CredoWeb",
     "dateRange": "14/02/2022 – 15/07/2024",
     "location": "Sofia",
-    "description": "<p>CredoWeb is a digital platform that seeks to facilitate professional communication between all healthcare stakeholders and provide them with a unique online space where they can exchange knowledge, opinions and information.</p>\n<p>Back End Developer - building and maintaining the server-side of web applications, REST APIs ( PHP, Laminas, Doctrine, RabitMQ, Elasticsearch )</p>",
+    "description": "<p>CredoWeb is a digital platform designed to facilitate professional communication among healthcare stakeholders, providing a unique online space for knowledge exchange, opinions, and information sharing. At CredoWeb, I have enhanced my backend development skills by working on core services that deliver RESTful APIs to the frontend. My responsibilities include: - Developing and maintaining the main service built with PHP 8.1 - 8.3, Laminas, and Doctrine. - Implementing delayed task processing using RabbitMQ to ensure efficient asynchronous operations.</p>",
     "tags": [
       "PHP",
       "Laminas",
       "MySQL",
       "Doctrine",
-      "Laravel"
+      "Laravel",
+      "Neo4J",
+      "Opensearch",
+      "Agile",
+      "Scrum"
     ]
   },
   {
@@ -38,7 +43,7 @@ export const experiences: ExperienceEntry[] = [
     "company": "Advent Group",
     "dateRange": "19/02/2019 – 14/02/2022",
     "location": "Sofia",
-    "description": "<p>Operating across the globe, Advent Group is a worldwide leader in in-person and online One-to-One education events and marketing solutions for the higher education sector </p>\n<p>Web Developer - extend and support existing company projects.&nbsp;</p>\n<p>I was part of the team, who RD new projects. Used technologies: PHP (Phalconphp), MySql, JavaScript (JQuery, VueJs), Css (Bootstrap)</p>",
+    "description": "<p>Advent Group is a global leader in delivering in-person and online One-to-One education events and marketing solutions for the higher education sector. At Advent, I have had the privilege of working on a diverse range of projects, from simple content management systems to complex CMS/CRM platforms. My responsibilities encompassed the full software development lifecycle, including: - Designing and implementing front-end interfaces and user experiences - Developing robust back-end logic and database architectures - Ensuring seamless integration across systems Technologies utilized include PHP 7.2&ndash;7.4 (PhalconPHP), MySQL, JavaScript (jQuery, Vue.js), and CSS (Bootstrap).</p>",
     "tags": [
       "PHP",
       "Phalconphp",
@@ -46,7 +51,9 @@ export const experiences: ExperienceEntry[] = [
       "JavaScript",
       "JQuery",
       "Vue.js",
-      "Bootstrap"
+      "Bootstrap",
+      "Agile",
+      "Scrum"
     ]
   },
   {
@@ -54,12 +61,19 @@ export const experiences: ExperienceEntry[] = [
     "company": "Flowminds",
     "dateRange": "24/09/2017 – 19/02/2019",
     "location": "Sofia",
-    "description": "The company is focused in web and mobile development, profiled in IT\noursourcing services\nWeb Developer - Create various web applications, based on Laravel\nframework.",
+    "description": "<p>Company specializing in web and mobile development with a focus on IT outsourcing services&nbsp;</p>\n<p>- Designed and implemented new features for an e-learning platform, significantly enhancing functionality and user engagement. Technologies used: PHP 7.2, Laravel, MySQL, JavaScript, CSS, Bootstrap <br>- Developed an online event management system enabling stand bookings and guest sign-ins, streamlining event registration processes. Technologies used: PHP, Lumen, MySQL, JavaScript, CSS, Bootstrap <br>- Optimized system performance and user experience by leveraging PHP 5.6 - 7.2, MySQL, Laravel, Lumen, CSS, and Bootstrap to refine existing features and workflows</p>",
     "tags": [
       "PHP",
       "MySql",
       "Laravel",
-      "Vue.js"
+      "Vue.js",
+      "JavaScript",
+      "CSS",
+      "Bootstrap",
+      "Jira",
+      "Git",
+      "CI/CD",
+      "Lumen"
     ]
   },
   {
@@ -67,7 +81,7 @@ export const experiences: ExperienceEntry[] = [
     "company": "SAXO OOD",
     "dateRange": "25/08/2012 – 21/09/2017",
     "location": "Ruse",
-    "description": "<p>Web Developer and Manager at yakobg.com, yakosport.ro, insportline.bg, hi-tec.com/bg</p>\n<p>&nbsp;- Developed and maintained e-commerce platforms using OpenCart (http://yakobg.com/), WordPress (http://yakobgblog.com/), and WooCommerce (http://spartan-sport.bg/), utilizing PHP, MySQL, jQuery, and Bootstrap.</p>\n<p>- Integrated data from various back-end services and databases to ensure data consistency and reliability.&nbsp;<br>- Designed and developed responsive, user-centric websites to enhance user experience and engagement.&nbsp;<br>- Implemented new features and functionalities to meet evolving business needs.&nbsp;<br>- Ensured seamless website performance by optimizing load times and eliminating errors across pages.&nbsp;<br>- Managed and maintained Linux-based (CentOS) web servers for optimal uptime and security. <br>- Managed digital advertising campaigns through Google AdWords and analyzed website traffic and user behavior via Google Analytics to inform marketing strategies.</p>",
+    "description": "<p>&nbsp;</p>\n<p>SAXO is company, focused on distributing and selling sporting goods.</p>\n<p>My profesional expirinece as Softwer Developer started at SAXO. There i have chance to participiate in whole lifecicle of the product development - from gathering requirements and designing technical solutions to implementation, testing, deployment, and post-release support. I became more confident in evaluating trade-offs, prioritizing features, and choosing the right tools and methodologies based on the problem at hand. This experience was a key stage in my growth as an engineer, as it helped me bridge the gap between theoretical knowledge and practical execution, and laid the groundwork for taking on more strategic roles in future projects.</p>\n<p>-Integrated data from various back-end services and databases to ensure data consistency and reliability.&nbsp;<br>- Designed and developed responsive, user-centric websites to enhance user experience and engagement.&nbsp;<br>- Implemented new features and functionalities to meet evolving business needs.&nbsp;<br>- Ensured seamless website performance by optimizing load times and eliminating errors across pages.&nbsp;<br>- Managed and maintained Linux-based (CentOS) web servers for optimal uptime and security. <br>- Managed digital advertising campaigns through Google AdWords and analyzed website traffic and user behavior via Google Analytics to inform marketing strategies.<br>- OpenCart (http://yakobg.com/), WordPress (http://yakobgblog.com/), and WooCommerce (http://spartan-sport.bg/), utilizing PHP, MySQL, jQuery, and Bootstrap.</p>",
     "tags": [
       "PHP",
       "MySql",
@@ -82,19 +96,24 @@ export const experiences: ExperienceEntry[] = [
     "title": "Free Lancer",
     "company": "",
     "dateRange": "2006 - 2015",
-    "description": "During this time, I worked as a freelancer, taking on a variety of projects. I gained hands-on experience in full-stack development, working with different clients, solving problems, and delivering value through clean, maintainable code.",
+    "description": "<p>During this time, I worked as a freelancer, taking on a variety of projects. I gained hands-on experience in full-stack development, working with different clients, solving problems, and delivering value through clean, maintainable code.</p>\n<p>Project Domains: eCommerce, Personal blogs, News</p>",
     "tags": [
       "Software Quality",
-      "Grunt (Software)",
       "Databases",
       "Programming",
       "Communication",
       "Problem Solving",
       "Client Requirements",
       "Knowledge Sharing",
-      "Postman API",
-      "ESLint",
-      "Coding Standards"
+      "Coding Standards",
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "JQuery",
+      "CSS",
+      "Bootstrap",
+      "Opencart",
+      "Wordpress"
     ]
   }
 ];

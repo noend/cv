@@ -7,8 +7,12 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: {
+  theme: {    
+    extend: {      textShadow: {
+        sm: '1px 1px 0 var(--tw-shadow-color)',
+        md: '2px 2px 0 var(--tw-shadow-color)',
+        lg: '3px 3px 0 var(--tw-shadow-color)',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -45,8 +49,18 @@ const config: Config = {
         },
       },
     },
-  },
-  plugins: [],
+  },  plugins: [
+    function ({ matchUtilities, theme }: any) {
+      matchUtilities(
+        {
+          'text-shadow': (value: string) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    },
+  ],
 }
 
 export default config
