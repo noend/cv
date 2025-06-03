@@ -18,6 +18,7 @@ import { experiences } from "@/data/cv-data";
 import { topSkills } from "@/data/topSkills";
 import { userProfile } from "@/data/user-profile";
 import { getProfileImageUrl } from "@/lib/image-utils";
+import { LinkedinHeader } from "@/components/linkedin-header";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -141,6 +142,12 @@ export default function Home() {
               {userProfile.location}
             </p>
           </div>
+          { userProfile.linkedin !== '' &&
+          (<div className="flex items-start mt-4 print:mt-0 print:ml-auto">
+              <FiLinkedin className="w-5 h-5 mr-2 print:w-4 print:h-4" />
+              <LinkedinHeader userProfile={userProfile} />
+          </div>)
+          }
         </section>        
         <section id="summary" className="mb-10 print:mb-6">
           <SectionHeading title="Summary" />
@@ -232,31 +239,32 @@ export default function Home() {
               </p>
             </div>
           )}
-        </section>
-
-        <section id="certifications" className="mb-10 print:mb-6">
-          <SectionHeading title="Certifications" />
-          <ul className="list-disc list-inside space-y-1 text-gray-700">
-            {userProfile.certifications.map((cert, index) =>
-              <li key={index}>
-                {cert.name}
-                {cert.issuer &&
-                  <span>
-                    {" "}- {cert.issuer}
-                  </span>}
-                {cert.date &&
-                  <span className="text-gray-500 text-sm ml-1">
-                    ({cert.date})
-                  </span>}
-              </li>
-            )}
-          </ul>
-        </section>
-
+        </section>        
+        { userProfile.certifications?.length > 0 && (
+          <section id="certifications" className="mb-10 print:mb-6">
+            <SectionHeading title="Certifications" />
+            <ul className="list-disc list-inside space-y-1 text-gray-700">
+              {userProfile.certifications.map((cert, index) =>
+                <li key={index}>
+                  {cert.name}
+                  {cert.issuer &&
+                    <span>
+                      {" "}- {cert.issuer}
+                    </span>}
+                  {cert.date &&
+                    <span className="text-gray-500 text-sm ml-1">
+                      ({cert.date})
+                    </span>}
+                </li>
+              )}
+            </ul>
+          </section>
+        )}
+{/*
         <section id="contact" className="print:mb-6">
           <SectionHeading title="Contact" />
           <div className="space-y-2 print:flex print:space-y-0 print:space-x-6">
-            {/* <div className="flex items-center">
+             <div className="flex items-center">
               <FiMail className="w-5 h-5 mr-2 print:w-4 print:h-4" />
               <span>
                 Email:{" "}
@@ -285,7 +293,7 @@ export default function Home() {
                   {userProfile.phone || ""}
                 </a>
               </span>
-            </div> */}
+            </div> 
             <div className="flex items-center">
               <FiLinkedin className="w-5 h-5 mr-2 print:w-4 print:h-4" />
               <span>
@@ -302,7 +310,7 @@ export default function Home() {
               </span>
             </div>
           </div>
-        </section>
+        </section>*/}
       </main>
 
       <footer className="container mx-auto px-4 py-6 text-center text-gray-500 text-sm print:hidden">
