@@ -1,6 +1,7 @@
-# PPanayotov.com
+# hnikolov.site
 
-**PPanayotov.com** is an open-source, minimalist personal website and CV builder. It allows individuals to create a clean, professional online presence without the complexity of databases or heavy infrastructure. Ideal for developers, freelancers, and anyone looking to maintain a simple digital profile.
+forked from index-panayotov/ppanayotov-com
+
 
 ---
 
@@ -32,25 +33,12 @@
 
 ---
 
-## 🚧 To-Do
-
-Planned features under development:
-
-- [x] Add image upload support with optimization for web and PDF
-- [x] Add AI assistance to improve and polish CV text
-- [ ] Expand contact and social media link options
-- [ ] Introduce multiple visual templates for printable CVs
-- [ ] Add support for multiple languages/localization
-
-Have an idea? [Open an issue](https://github.com/index-panayotov/ppanayotov-com/issues) or contribute directly!
-
----
-
 ## 🧱 Tech Stack
 
 - **Framework**: [Next.js](https://nextjs.org/) – React-based frontend framework
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework
 - **UI Components**: [Radix UI](https://www.radix-ui.com/) – Headless, accessible UI primitives
+- **TinyMCE**: [TinyMCE](https://www.tiny.cloud/) - WYSIWYG Rich Text Editor - NEW
 - **AI Integration**: [OpenRouter](https://openrouter.ai/) – API for accessing various AI models
 - **Image Processing**: [Sharp](https://sharp.pixelplumbing.com/) – High-performance image processing
 - **Hosting**: [Vercel](https://vercel.com/) – Serverless deployment platform
@@ -101,27 +89,6 @@ npm run build
 npm run start   # Optional: run in production mode locally
 ```
 
-## 📁 Folder Structure
-
-```
-/app            → Main application (routing, layouts, API, admin)
-  /api          → Backend API routes
-  /admin        → Admin panel pages and API routes
-/components     → Reusable UI and admin components
-  /admin        → Admin-specific components including AI-enhanced inputs
-  /ui           → Reusable UI components based on Radix UI
-/data           → Static data files (CV, skills, user profile)
-/hooks          → Custom React hooks
-/lib            → Utility functions and helpers
-/public         → Static assets (images, icons, etc.)
-  /fonts        → Font files for image generation or custom web fonts
-  /uploads      → User-uploaded images with optimized versions
-/services       → API service integrations (e.g., OpenRouter)
-/styles         → Global and component styles
-/types          → TypeScript type definitions
-.env            → Environment variables (e.g., admin password)
-```
-
 ---
 
 ## 📦 Deployment
@@ -138,32 +105,7 @@ You can deploy this project to [Vercel](https://vercel.com) with one click:
 ## 🔗 Live Example
 
 You can see the latest live version at:  
-🌐 [https://www.ppanayotov.com](https://www.ppanayotov.com)
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Here’s how you can help:
-
-- Submit feature requests or bug reports
-- Improve styling or layout
-- Refactor code or optimize performance
-- Help write documentation
-
-Please fork the repository and open a pull request with your improvements. Don’t forget to update the `README.md` if needed.
-
----
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-## 🙌 Acknowledgements
-
-Thanks to all contributors and open-source libraries that make this project possible.
+🌐 [https://www.hnikolov.site/](https://www.hnikolov.site/)
 
 ---
 
@@ -216,4 +158,5 @@ ADMIN_PASSWORD=your-secure-password
 # OpenRouter API for AI features
 OPENROUTER_KEY=your-openrouter-api-key
 OPENROUTER_MODEL=openai/gpt-4.1-nano
+NEXT_PUBLIC_TINYMCE_API_KEY=your-tinymce-api-key
 ```

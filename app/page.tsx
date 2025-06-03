@@ -307,9 +307,8 @@ export default function Home() {
 
       <footer className="container mx-auto px-4 py-6 text-center text-gray-500 text-sm print:hidden">
         <p>
-          © {new Date().getFullYear()} {userProfile.name}. All rights reserved.
           <span className="ml-2 text-xs text-gray-400">
-            | powered by <a href="https://github.com/index-panayotov/ppanayotov-com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">ppanayotov</a>
+           <a href="https://github.com/noend/cv" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">GitHub repo</a>
           </span>
         </p>
       </footer>
